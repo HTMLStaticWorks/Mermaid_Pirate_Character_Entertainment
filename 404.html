@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found | Piratica</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--surface);
+      padding: 24px;
+      padding-top: var(--nav-height);
+    }
+    .error-content h1 {
+      font-size: 8rem;
+      color: var(--primary);
+      margin-bottom: 0;
+      line-height: 1;
+      text-shadow: 0 4px 20px rgba(30,111,168,0.2);
+    }
+    [data-theme="dark"] .error-content h1 { color: var(--accent); }
+    .error-content h2 {
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      font-family: var(--font-display);
+    }
+    .error-content p {
+      font-size: 1.2rem;
+      margin-bottom: 32px;
+      opacity: 0.8;
+    }
+    .error-icon {
+      font-size: 5rem;
+      color: var(--secondary);
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Drawer Overlay & Menu -->
+  <div class="drawer-overlay"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <div class="logo">Piratica <i class="ph ph-anchor"></i></div>
+      <button class="close-drawer"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="characters.html">Characters</a>
+      <a href="packages.html">Packages</a>
+      <a href="party-types.html">Party Types</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="booking.html">Book Now</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+      <a href="login.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <div class="drawer-actions">
+      <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Piratica <i class="ph ph-anchor"></i></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="characters.html">Characters</a>
+        <a href="packages.html">Packages</a>
+        <a href="party-types.html">Party Types</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+        <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="error-page">
+    <div class="error-content">
+      <i class="ph ph-map-trifold error-icon"></i>
+      <h1>404</h1>
+      <h2>X Marks the Wrong Spot!</h2>
+      <p>Even the best pirates get lost sometimes. The page you're looking for has drifted out to sea.</p>
+      <a href="index.html" class="btn btn-primary">Navigate Back Home</a>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

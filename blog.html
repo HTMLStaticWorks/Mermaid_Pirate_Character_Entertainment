@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Piratica</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+    .blog-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.3s;
+      border: 1px solid var(--border);
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    .blog-img {
+      height: 220px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .blog-content {
+      padding: 24px;
+    }
+    .blog-tag {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      font-size: 0.8rem;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .blog-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--primary);
+      line-height: 1.3;
+    }
+    [data-theme="dark"] .blog-card h3 { color: var(--accent); }
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Drawer Overlay & Menu -->
+  <div class="drawer-overlay"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <div class="logo">Piratica <i class="ph ph-anchor"></i></div>
+      <button class="close-drawer"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="characters.html">Characters</a>
+      <a href="packages.html">Packages</a>
+      <a href="party-types.html">Party Types</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html" class="active">Blog</a>
+      <a href="booking.html">Book Now</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+      <a href="login.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <div class="drawer-actions">
+      <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Piratica <i class="ph ph-anchor"></i></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="characters.html">Characters</a>
+        <a href="packages.html">Packages</a>
+        <a href="party-types.html">Party Types</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+        <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--nav-height);">
+    <!-- Header -->
+    <section style="background: var(--surface); padding: 80px 0;">
+      <div class="container text-center">
+        <h1 style="color: var(--primary);">Captain's Log</h1>
+        <p class="section-subtitle">Party Tips, Character Stories, and Event Recaps</p>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section>
+      <div class="container">
+        <div class="blog-grid">
+          
+          <!-- Post 1 -->
+          <article class="blog-card">
+            <a href="blog-single.html">
+              <img src="https://images.unsplash.com/photo-1540152431786-fb7c6afc949a?auto=format&fit=crop&q=80&w=600" class="blog-img" alt="Blog Post">
+            </a>
+            <div class="blog-content">
+              <span class="blog-tag">Party Tips</span>
+              <a href="blog-single.html"><h3>How to Prepare Your Pool for a Mermaid Visit</h3></a>
+              <p style="font-size: 0.95rem;">Ensure your pool is safe, clean, and ready for the magic. We share our top 5 tips for preparing your backyard oasis.</p>
+              <div class="blog-meta">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" class="author-avatar" alt="Author">
+                <div>
+                  <div style="font-family: var(--font-ui); font-weight: 700;">Sarah Jenkins</div>
+                  <div style="font-size: 0.8rem;">May 12, 2026</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 2 -->
+          <article class="blog-card">
+            <a href="blog-single.html">
+              <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=600" class="blog-img" alt="Blog Post">
+            </a>
+            <div class="blog-content">
+              <span class="blog-tag" style="background: var(--secondary);">Event Recaps</span>
+              <a href="blog-single.html"><h3>Captain Redbeard's Grand Treasure Hunt</h3></a>
+              <p style="font-size: 0.95rem;">A look back at last weekend's epic land party where 20 little pirates successfully located the hidden doubloons.</p>
+              <div class="blog-meta">
+                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100" class="author-avatar" alt="Author">
+                <div>
+                  <div style="font-family: var(--font-ui); font-weight: 700;">Mike O'Connor</div>
+                  <div style="font-size: 0.8rem;">May 05, 2026</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Post 3 -->
+          <article class="blog-card">
+            <a href="blog-single.html">
+              <img src="https://images.unsplash.com/photo-1594957545938-f10d21e89bd4?auto=format&fit=crop&q=80&w=600" class="blog-img" alt="Blog Post">
+            </a>
+            <div class="blog-content">
+              <span class="blog-tag" style="background: var(--accent); color: #000;">Character Stories</span>
+              <a href="blog-single.html"><h3>Meet Marina: Life Under the Sea</h3></a>
+              <p style="font-size: 0.95rem;">An exclusive interview with our lead mermaid, Marina, about her favorite songs and why she loves swimming.</p>
+              <div class="blog-meta">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" class="author-avatar" alt="Author">
+                <div>
+                  <div style="font-family: var(--font-ui); font-weight: 700;">Emily Rose</div>
+                  <div style="font-size: 0.8rem;">April 28, 2026</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Pagination -->
+        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 48px;">
+          <a href="#" class="btn btn-primary" style="padding: 10px 16px;">1</a>
+          <a href="#" class="btn btn-secondary" style="padding: 10px 16px;">2</a>
+          <a href="#" class="btn btn-secondary" style="padding: 10px 16px;"><i class="ph ph-caret-right"></i></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor" style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to high seas treasure hunts.</p>
+          <div class="social-links">
+            <a href="#"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+            <a href="#"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Party Types</h4>
+          <ul>
+            <li><a href="party-types.html">Pool Parties</a></li>
+            <li><a href="party-types.html">Land Parties</a></li>
+            <li><a href="themed-events.html">Themed Events</a></li>
+            <li><a href="characters.html">Characters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+1234567890">1-800-PIRATICA</a></li>
+            <li><a href="mailto:hello@piratica.com">hello@piratica.com</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Piratica Entertainment. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

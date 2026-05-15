@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Piratica</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+    .contact-info {
+      background: var(--surface);
+      padding: 48px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .contact-info-item i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+    .contact-info-item h4 {
+      margin-bottom: 4px;
+      font-family: var(--font-display);
+    }
+    .map-container {
+      width: 100%;
+      height: 300px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 32px;
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    @media (max-width: 992px) {
+      .contact-layout { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 360px) {
+      .contact-layout { gap: 24px; }
+      .contact-info { padding: 24px; text-align: center; }
+      .contact-info-item { flex-direction: column; align-items: center; text-align: center; }
+      section { padding: 40px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Drawer Overlay & Menu -->
+  <div class="drawer-overlay"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <div class="logo">Piratica <i class="ph ph-anchor"></i></div>
+      <button class="close-drawer"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="characters.html">Characters</a>
+      <a href="packages.html">Packages</a>
+      <a href="party-types.html">Party Types</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="booking.html">Book Now</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+      <a href="login.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <div class="drawer-actions">
+      <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Piratica <i class="ph ph-anchor"></i></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="characters.html">Characters</a>
+        <a href="packages.html">Packages</a>
+        <a href="party-types.html">Party Types</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+        <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--nav-height);">
+    <section>
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 48px;">
+          <h1 style="color: var(--primary);">Drop Us a Line</h1>
+          <p class="section-subtitle">We'd love to hear from you</p>
+        </div>
+
+        <div class="contact-layout">
+          
+          <!-- Contact Form -->
+          <div>
+            <h3 style="margin-bottom: 24px; font-family: var(--font-display);">Send a Message</h3>
+            <form action="https://formspree.io/f/placeholder" method="POST" novalidate>
+              <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" name="name" required placeholder="Captain Jack">
+                <div class="form-error">Please enter your name</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" required placeholder="jack@sea.com">
+                <div class="form-error">Please enter a valid email</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Phone (Optional)</label>
+                <input type="tel" class="form-control" name="phone" placeholder="(555) 123-4567">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea class="form-control" name="message" rows="5" required placeholder="How can we help?"></textarea>
+                <div class="form-error">Please enter a message</div>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <div class="contact-info-item">
+              <i class="ph ph-map-pin"></i>
+              <div>
+                <h4>Headquarters</h4>
+                <p>123 Treasure Island Way<br>Nautical Bay, FL 33000</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <i class="ph ph-phone"></i>
+              <div>
+                <h4>Phone</h4>
+                <p><a href="tel:1800PIRATICA">1-800-PIRATICA</a></p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <i class="ph ph-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p><a href="mailto:hello@piratica.com">hello@piratica.com</a></p>
+              </div>
+            </div>
+
+            <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border);">
+              <h4 style="font-family: var(--font-display); margin-bottom: 16px;">Follow the Adventure</h4>
+              <div class="social-links" style="margin-top: 0;">
+                <a href="#" style="color: var(--primary);"><i class="ph ph-instagram-logo"></i></a>
+                <a href="#" style="color: var(--primary);"><i class="ph ph-facebook-logo"></i></a>
+                <a href="#" style="color: var(--primary);"><i class="ph ph-tiktok-logo"></i></a>
+                <a href="#" style="color: var(--primary);"><i class="ph ph-youtube-logo"></i></a>
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div class="map-container">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113401.78201200055!2d-80.1264389650428!3d26.13888358482431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d900ad4fdd1e0b%3A0x808ea019a32cba9a!2sFort%20Lauderdale%2C%20FL!5e0!3m2!1sen!2sus!4v1684534728564!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor" style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to high seas treasure hunts.</p>
+          <div class="social-links">
+            <a href="#"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+            <a href="#"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Party Types</h4>
+          <ul>
+            <li><a href="party-types.html">Pool Parties</a></li>
+            <li><a href="party-types.html">Land Parties</a></li>
+            <li><a href="themed-events.html">Themed Events</a></li>
+            <li><a href="characters.html">Characters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+1234567890">1-800-PIRATICA</a></li>
+            <li><a href="mailto:hello@piratica.com">hello@piratica.com</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Piratica Entertainment. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

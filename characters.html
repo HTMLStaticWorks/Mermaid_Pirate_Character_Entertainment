@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Characters | Piratica</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .filter-btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 24px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      transition: all 0.3s;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .char-card-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+    }
+
+    .char-profile {
+      text-align: left;
+      align-items: flex-start;
+    }
+
+    .char-profile img {
+      height: 300px;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .char-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .char-skill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-family: var(--font-ui);
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    /* FAQ Styles */
+    .faq-section {
+      padding: 100px 0;
+      background: var(--bg-alt);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-question {
+      padding: 24px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: none;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--primary);
+    }
+
+    .faq-question i {
+      transition: transform 0.3s ease;
+      font-size: 1.5rem;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 24px;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 0 24px 24px;
+    }
+
+    .faq-answer p {
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <div class="logo">Piratica <i class="ph ph-anchor"></i></div>
+      <button class="close-drawer"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="characters.html" class="active">Characters</a>
+      <a href="packages.html">Packages</a>
+      <a href="party-types.html">Party Types</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="booking.html">Book Now</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="login.html" class="btn btn-primary"
+      style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <div class="drawer-actions">
+      <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Piratica <i class="ph ph-anchor"></i></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="characters.html" class="active">Characters</a>
+        <a href="packages.html">Packages</a>
+        <a href="party-types.html">Party Types</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+        <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--nav-height);">
+    <!-- Page Header -->
+    <section style="background: var(--surface); padding: 80px 0;">
+      <div class="container text-center">
+        <h1 style="color: var(--primary);">Our Magical Crew</h1>
+        <p class="section-subtitle">Meet the Mermaids and Pirates ready to make your party unforgettable.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <!-- Filters -->
+        <div class="filter-btn-group">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="mermaid">Mermaids</button>
+          <button class="filter-btn" data-filter="pirate">Pirates</button>
+        </div>
+
+        <div class="char-card-list">
+
+          <!-- Character 1 -->
+          <div class="card char-profile" data-type="mermaid" style="text-align: center; align-items: center;">
+            <img src="assets/images/marinaa-mermaid.jpg" loading="lazy" alt="Marina the Mermaid">
+            <h3 class="card-title">Marina the Mermaid</h3>
+            <p class="card-text">Sweet, adventurous, and loves to sing. Marina brings the magic of the coral reef to any
+              pool party.</p>
+            <div class="char-skills" style="justify-content: center;">
+              <span class="char-skill">Swimming Games</span>
+              <span class="char-skill">Storytelling</span>
+              <span class="char-skill">Face Painting</span>
+            </div>
+            <a href="booking.html" class="btn btn-secondary">Book Marina</a>
+          </div>
+
+          <!-- Character 2 -->
+          <div class="card char-profile" data-type="pirate" style="text-align: center; align-items: center;">
+            <img src="assets/images/captaain-redbeard.jpg" loading="lazy" alt="Captain Redbeard">
+            <h3 class="card-title">Captain Redbeard</h3>
+            <p class="card-text">Loud, funny, and full of tall tales. He lost his treasure and needs your crew to help
+              find it!</p>
+            <div class="char-skills" style="justify-content: center;">
+              <span class="char-skill">Treasure Hunts</span>
+              <span class="char-skill">Sword Training</span>
+              <span class="char-skill">Balloon Animals</span>
+            </div>
+            <a href="booking.html" class="btn btn-secondary">Book Redbeard</a>
+          </div>
+
+          <!-- Character 3 -->
+          <div class="card char-profile" data-type="mermaid" style="text-align: center; align-items: center;">
+            <img src="assets/images/pearl-princess.jpg" loading="lazy" alt="Pearl the Sea Princess">
+            <h3 class="card-title">Pearl the Sea Princess</h3>
+            <p class="card-text">Elegant and graceful, Pearl loves sharing the ocean's greatest secrets and crafting
+              shell jewelry.</p>
+            <div class="char-skills" style="justify-content: center;">
+              <span class="char-skill">Crafts</span>
+              <span class="char-skill">Glitter Tattoos</span>
+              <span class="char-skill">Singing</span>
+            </div>
+            <a href="booking.html" class="btn btn-secondary">Book Pearl</a>
+          </div>
+
+          <!-- Character 4 -->
+          <div class="card char-profile" data-type="pirate" style="text-align: center; align-items: center;">
+            <img src="assets/images/firstmate-jack.jpg" loading="lazy" alt="First Mate Jack">
+            <h3 class="card-title">First Mate Jack</h3>
+            <p class="card-text">A cheeky and playful pirate who knows all the best games and sea shanties to get the
+              party started.</p>
+            <div class="char-skills" style="justify-content: center;">
+              <span class="char-skill">Interactive Games</span>
+              <span class="char-skill">Magic Tricks</span>
+              <span class="char-skill">Sea Shanties</span>
+            </div>
+            <a href="booking.html" class="btn btn-secondary">Book Jack</a>
+          </div>
+
+          <!-- Character 5 -->
+          <div class="card char-profile" data-type="mermaid" style="text-align: center; align-items: center;">
+            <img src="assets/images/coral-mermaid.jpg" loading="lazy" alt="Coral the Deep Sea Dancer">
+            <h3 class="card-title">Coral the Deep Sea Dancer</h3>
+            <p class="card-text">Vibrant and full of energy, Coral lights up every room with her dazzling tail and
+              infectious ocean dances that get every child moving.</p>
+            <div class="char-skills" style="justify-content: center;">
+              <span class="char-skill">Dance Performances</span>
+              <span class="char-skill">Bubble Art</span>
+              <span class="char-skill">Shell Crafts</span>
+            </div>
+            <a href="booking.html" class="btn btn-secondary">Book Coral</a>
+          </div>
+
+          <!-- Character 6 -->
+          <div class="card char-profile" data-type="pirate" style="text-align: center; align-items: center;">
+            <img src="assets/images/captain-silverfox.jpg" loading="lazy" alt="Captain Silverfox">
+            <h3 class="card-title">Captain Silverfox</h3>
+            <p class="card-text">The most cunning pirate on the seven seas. Silverfox brings mystery, magic tricks, and
+              a legendary treasure map only your crew can decode.</p>
+            <div class="char-skills" style="justify-content: center;">
+              <span class="char-skill">Magic Shows</span>
+              <span class="char-skill">Map Decoding</span>
+              <span class="char-skill">Pirate Oath Ceremony</span>
+            </div>
+            <a href="booking.html" class="btn btn-secondary">Book Silverfox</a>
+          </div>
+
+        </div>
+      </div>
+    <!-- FAQ Section -->
+    <section class="faq-section">
+      <div class="container">
+        <h2 class="section-title">Common Questions</h2>
+        <div class="faq-container">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              Are your mermaids safe for pool parties?
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely! All our mermaid performers are certified lifeguards and experienced swimmers. They use high-quality, professional-grade tails designed for safe movement in the water, and we always require adult supervision during pool activities.</p>
+            </div>
+          </div>
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              How far in advance should I book?
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>We recommend booking at least 4-6 weeks in advance, especially for weekend dates during the summer season. However, feel free to reach out for last-minute availability—sometimes we have a gap in our voyage!</p>
+            </div>
+          </div>
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I request a specific performer?
+              <i class="ph ph-caret-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, you can certainly request a specific character or performer. While we do our best to accommodate all requests based on availability, all our crew members are highly trained and equally magical!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+          const faqItem = button.parentElement;
+          faqItem.classList.toggle('active');
+          
+          // Optional: Close other open FAQ items
+          document.querySelectorAll('.faq-item').forEach(item => {
+            if (item !== faqItem) {
+              item.classList.remove('active');
+            }
+          });
+        });
+      });
+    </script>
+  </main>
+
+  <footer>
+    <!-- Footer content reused -->
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor"
+              style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to
+            high seas treasure hunts.</p>
+          <div class="social-links">
+            <a href="#"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+            <a href="#"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Party Types</h4>
+          <ul>
+            <li><a href="party-types.html">Pool Parties</a></li>
+            <li><a href="party-types.html">Land Parties</a></li>
+            <li><a href="themed-events.html">Themed Events</a></li>
+            <li><a href="characters.html">Characters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+1234567890">1-800-PIRATICA</a></li>
+            <li><a href="mailto:hello@piratica.com">hello@piratica.com</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Piratica Entertainment. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const charCards = document.querySelectorAll('.char-profile');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const filter = btn.getAttribute('data-filter');
+
+          charCards.forEach(card => {
+            if (filter === 'all' || card.getAttribute('data-type') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

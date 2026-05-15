@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Packages | Piratica</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 48px;
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 24px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .comparison-table th:first-child,
+    .comparison-table td:first-child {
+      text-align: left;
+    }
+
+    .comparison-table th {
+      background: var(--primary);
+      color: #fff;
+      font-family: var(--font-display);
+    }
+
+    .comparison-table th:nth-child(3) {
+      background: var(--accent);
+      color: #000;
+    }
+
+    .faq-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 24px;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .faq-question {
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      padding: 0 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      opacity: 0.9;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 24px 24px;
+      max-height: 500px;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
+
+    @media (max-width: 768px) {
+      .comparison-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+    }
+
+    /* Package Grid Styles */
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      align-items: stretch;
+      /* Make all cards same size */
+    }
+
+    @media (max-width: 1100px) {
+      .package-grid {
+        gap: 20px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .package-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      /* Center the 3rd card on 2-col layout */
+      .package-grid .card:nth-child(3) {
+        grid-column: span 2;
+        justify-self: center;
+        width: 100%;
+        max-width: 400px;
+        /* Limit width so it matches others */
+      }
+    }
+
+    @media (max-width: 767px) {
+      .package-grid .card:nth-child(3) {
+        grid-column: span 1;
+        max-width: none;
+      }
+
+      .package-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .package-grid {
+        gap: 24px;
+      }
+    }
+
+    /* Table Responsiveness */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: 48px;
+      scrollbar-width: thin;
+      /* Firefox */
+      scrollbar-color: var(--primary) var(--surface);
+    }
+
+    .table-responsive::-webkit-scrollbar {
+      height: 12px;
+      display: block !important;
+    }
+
+    .table-responsive::-webkit-scrollbar-track {
+      background: #e0e0e0;
+      border-radius: 10px;
+    }
+
+    .table-responsive::-webkit-scrollbar-thumb {
+      background-color: var(--primary);
+      border-radius: 10px;
+      border: 2px solid #e0e0e0;
+    }
+
+    /* Force visibility on mobile */
+    .table-responsive {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: 900px) {
+      .comparison-table {
+        min-width: 800px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Drawer Overlay & Menu -->
+  <div class="drawer-overlay"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <div class="logo">Piratica <i class="ph ph-anchor"></i></div>
+      <button class="close-drawer"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="characters.html">Characters</a>
+      <a href="packages.html" class="active">Packages</a>
+      <a href="party-types.html">Party Types</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="booking.html">Book Now</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="login.html" class="btn btn-primary"
+      style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <div class="drawer-actions">
+      <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Piratica <i class="ph ph-anchor"></i></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="characters.html">Characters</a>
+        <a href="packages.html" class="active">Packages</a>
+        <a href="party-types.html">Party Types</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+        <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--nav-height);">
+    <!-- Page Header -->
+    <section style="background: var(--surface); padding: 80px 0;">
+      <div class="container text-center">
+        <h1 style="color: var(--primary);">Treasure Packages</h1>
+        <p class="section-subtitle">Choose the perfect adventure for your event</p>
+      </div>
+    </section>
+
+    <!-- Packages Cards (Reused from Index) -->
+    <section>
+      <div class="container">
+        <div class="package-grid">
+          <!-- Silver -->
+          <div class="card">
+            <h3 class="card-title" style="color: #9e9e9e;">Silver Galleon</h3>
+            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 24px; font-family: var(--font-ui);">$199</p>
+            <p class="card-text">Perfect for small gatherings. Includes 1 character for 60 minutes, photos, and a
+              special gift.</p>
+            <div style="margin-top: auto;">
+              <a href="booking.html" class="btn btn-secondary" style="width: 100%;">Book Now</a>
+            </div>
+          </div>
+          <!-- Gold -->
+          <div class="card" style="border: 2px solid var(--accent); position: relative; z-index: 2;">
+            <div
+              style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #000; padding: 4px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; font-family: var(--font-ui); text-transform: uppercase; white-space: nowrap;">
+              Most Popular</div>
+            <h3 class="card-title" style="color: var(--accent);">Golden Treasure</h3>
+            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 24px; font-family: var(--font-ui);">$299</p>
+            <p class="card-text">The ultimate adventure. Includes 2 characters for 90 minutes, face painting, and a
+              treasure hunt.</p>
+            <div style="margin-top: auto;">
+              <a href="booking.html" class="btn btn-primary" style="width: 100%;">Book Now</a>
+            </div>
+          </div>
+          <!-- Royal -->
+          <div class="card">
+            <h3 class="card-title" style="color: var(--secondary);">Royal Admiral</h3>
+            <p style="font-size: 2rem; font-weight: 700; margin-bottom: 24px; font-family: var(--font-ui);">$449</p>
+            <p class="card-text">For the grandest parties. 3 characters, 2 hours of non-stop entertainment, games, and
+              coronation ceremony.</p>
+            <div style="margin-top: auto;">
+              <a href="booking.html" class="btn btn-secondary" style="width: 100%;">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Comparison Table -->
+    <section class="bg-alt">
+      <div class="container">
+        <h2 class="section-title">Compare Features</h2>
+        <div class="table-responsive">
+          <table class="comparison-table" style="margin-top: 0;">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Silver Galleon</th>
+                <th>Golden Treasure</th>
+                <th>Royal Admiral</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Characters</td>
+                <td>1 Character</td>
+                <td>2 Characters</td>
+                <td>3 Characters</td>
+              </tr>
+              <tr>
+                <td>Duration</td>
+                <td>60 Minutes</td>
+                <td>90 Minutes</td>
+                <td>120 Minutes</td>
+              </tr>
+              <tr>
+                <td>Interactive Storytelling</td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+              </tr>
+              <tr>
+                <td>Photo Opportunities</td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+              </tr>
+              <tr>
+                <td>Face Painting</td>
+                <td><i class="ph ph-x" style="color: #d32f2f; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+              </tr>
+              <tr>
+                <td>Treasure Hunt</td>
+                <td><i class="ph ph-x" style="color: #d32f2f; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+              </tr>
+              <tr>
+                <td>Coronation Ceremony</td>
+                <td><i class="ph ph-x" style="color: #d32f2f; font-weight: 700;"></i></td>
+                <td><i class="ph ph-x" style="color: #d32f2f; font-weight: 700;"></i></td>
+                <td><i class="ph ph-check" style="color: #388e3c; font-weight: 700;"></i></td>
+              </tr>
+            </tbody>
+          </table>
+
+
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <div class="faq-question">What is your cancellation policy? <i class="ph ph-caret-down"></i></div>
+            <div class="faq-answer">Deposits are non-refundable, but we allow rescheduling up to 48 hours before the
+              event subject to availability.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Can the mermaids actually swim? <i class="ph ph-caret-down"></i></div>
+            <div class="faq-answer">Yes! All our mermaids are trained swimmers and can perform in pools. We do require a
+              brief safety check of your pool beforehand.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Do you host parties at your own venue? <i class="ph ph-caret-down"></i></div>
+            <div class="faq-answer">Piratica is a mobile entertainment service. We bring the magic directly to your
+              home, rented pool, or chosen venue!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor"
+              style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to
+            high seas treasure hunts.</p>
+          <div class="social-links">
+            <a href="#"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+            <a href="#"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Party Types</h4>
+          <ul>
+            <li><a href="party-types.html">Pool Parties</a></li>
+            <li><a href="party-types.html">Land Parties</a></li>
+            <li><a href="themed-events.html">Themed Events</a></li>
+            <li><a href="characters.html">Characters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+1234567890">1-800-PIRATICA</a></li>
+            <li><a href="mailto:hello@piratica.com">hello@piratica.com</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Piratica Entertainment. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          faqItems.forEach(i => i.classList.remove('active'));
+          if (!isActive) item.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

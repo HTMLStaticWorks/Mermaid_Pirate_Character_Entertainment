@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Piratica - RTL Overrides
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .nav-links {
+  /* Flex direction handles order inherently, but just in case */
+}
+
+[dir="rtl"] .logo {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .btn-primary::after {
+  left: auto;
+  right: -100%;
+  transform: skewX(20deg);
+}
+[dir="rtl"] .btn-primary:hover::after {
+  right: 150%;
+  left: auto;
+}
+
+/* Slide drawer logic for RTL */
+[dir="rtl"] .drawer {
+  right: auto;
+  left: -100%;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.1);
+  transition: left 0.3s ease;
+}
+
+[dir="rtl"] .drawer.open {
+  right: auto;
+  left: 0;
+}
+
+[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+[dir="rtl"] .checkbox-wrap {
+  text-align: right;
+}
+
+[dir="rtl"] .typewriter-text {
+  border-right: none;
+  border-left: 3px solid var(--accent);
+}
+
+[dir="rtl"] .social-btn {
+  flex-direction: row-reverse;
+}
+
+/* Adjust margins and paddings using logical properties where necessary */
+[dir="rtl"] .ms-auto { margin-inline-start: auto; }
+[dir="rtl"] .me-auto { margin-inline-end: auto; }
+[dir="rtl"] .ps-3 { padding-inline-start: 1rem; }
+[dir="rtl"] .pe-3 { padding-inline-end: 1rem; }

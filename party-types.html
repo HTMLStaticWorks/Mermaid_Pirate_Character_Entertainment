@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Party Types | Piratica</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
+
+    .split-side {
+      padding: 60px 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      background: var(--bg);
+    }
+
+    .split-content {
+      position: relative;
+      z-index: 1;
+      max-width: 500px;
+    }
+
+    .split-content h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      margin-bottom: 24px;
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .split-content h2 {
+      color: var(--accent);
+    }
+
+    .feature-list {
+      text-align: left;
+      margin-bottom: 32px;
+    }
+
+    [dir="rtl"] .feature-list {
+      text-align: right;
+    }
+
+    .feature-list li {
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.1rem;
+    }
+
+    .feature-list i {
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .split-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .split-side {
+        padding: 40px 20px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .split-content h2 {
+        font-size: 2.2rem;
+      }
+
+      main section h1 {
+        font-size: clamp(2rem, 10vw, 2.5rem);
+      }
+
+      .section-subtitle {
+        font-size: 0.9rem;
+        padding: 0 10px;
+      }
+
+      main section {
+        padding: 60px 0 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Drawer Overlay & Menu -->
+  <div class="drawer-overlay"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <div class="logo">Piratica <i class="ph ph-anchor"></i></div>
+      <button class="close-drawer"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="characters.html">Characters</a>
+      <a href="packages.html">Packages</a>
+      <a href="party-types.html" class="active">Party Types</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="booking.html">Book Now</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="login.html" class="btn btn-primary"
+      style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <div class="drawer-actions">
+      <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Piratica <i class="ph ph-anchor"></i></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="characters.html">Characters</a>
+        <a href="packages.html">Packages</a>
+        <a href="party-types.html" class="active">Party Types</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+        <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="padding-top: var(--nav-height);">
+    <!-- Page Header -->
+    <section style="background: var(--surface); padding: 80px 0;">
+      <div class="container text-center">
+        <h1 style="color: var(--primary);">Party Environments</h1>
+        <p class="section-subtitle">Choose the perfect setting for your celebration</p>
+      </div>
+    </section>
+    <div class="split-layout">
+
+      <!-- Pool Party Side -->
+      <div class="split-side pool-side">
+        <div class="split-card">
+          <div class="split-card-img">
+            <img src="assets/images/pool-party-card.jpg" alt="Pool Party" loading="lazy">
+            <div class="split-card-img-overlay">
+              <span>🌊 Pool Parties</span>
+            </div>
+          </div>
+          <div class="split-content">
+            <h2>Pool Parties</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 24px;">Make a splash with a magical aquatic adventure. Our
+              trained mermaids and swimming pirates provide an unforgettable experience right in pool.</p>
+            <ul class="feature-list">
+              <li><i class="ph ph-drop" style="color: #4fc3f7;"></i> Fully swimmable tails & costumes</li>
+              <li><i class="ph ph-lifebuoy" style="color: #4fc3f7;"></i> Safe, supervised aquatic games</li>
+              <li><i class="ph ph-camera" style="color: #4fc3f7;"></i> In-water photo opportunities</li>
+              <li><i class="ph ph-music-notes" style="color: #4fc3f7;"></i> Under the sea sing-alongs</li>
+            </ul>
+            <div
+              style="background: rgba(30,111,168,0.08); padding: 16px; border-radius: 8px; margin-bottom: 28px; text-align: left; border-left: 3px solid #4fc3f7;">
+              <strong>Requirements:</strong> Clean pool, dedicated changing area, adult supervision present.
+            </div>
+            <a href="booking.html?type=pool" class="btn btn-primary" style="width: 100%; justify-content: center;">Book
+              a Pool Party</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Land Party Side -->
+      <div class="split-side land-side">
+        <div class="split-card">
+          <div class="split-card-img">
+            <img src="assets/images/land-party-card.jpg" alt="Land Party" loading="lazy">
+            <div class="split-card-img-overlay">
+              <span>🏴‍☠️ Land Parties</span>
+            </div>
+          </div>
+          <div class="split-content">
+            <h2>Land Parties</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 24px;">Transform your backyard or living room into a grand
+              pirate ship or an enchanted coastal grotto. Perfect for year-round celebrations.</p>
+            <ul class="feature-list">
+              <li><i class="ph ph-map-trifold" style="color: var(--accent);"></i> Interactive treasure hunts</li>
+              <li><i class="ph ph-sword" style="color: var(--accent);"></i> Safe foam sword training</li>
+              <li><i class="ph ph-palette" style="color: var(--accent);"></i> Professional face painting</li>
+              <li><i class="ph ph-balloon" style="color: var(--accent);"></i> Balloon sword twisting</li>
+            </ul>
+            <div
+              style="background: rgba(200,83,26,0.08); padding: 16px; border-radius: 8px; margin-bottom: 28px; text-align: left; border-left: 3px solid var(--accent);">
+              <strong>Requirements:</strong> Clear space for activities, indoor/outdoor flexibility.
+            </div>
+            <a href="booking.html?type=land" class="btn btn-primary"
+              style="background: var(--secondary); width: 100%; justify-content: center;">Book a Land Party</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Quick Inquiry Section -->
+    <section class="inquiry-section">
+      <div class="container">
+        <div class="inquiry-card">
+          <div class="inquiry-header">
+            <h3>Quick Availability Check</h3>
+            <p>Tell us your preferred environment and we'll check our crew's availability for your dates.</p>
+          </div>
+          <form class="inquiry-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Preferred Setting</label>
+                <select required>
+                  <option value="" disabled selected>Select Setting</option>
+                  <option value="pool">Pool Party (Magical Aquatic)</option>
+                  <option value="land">Land Party (Backyard/Indoor)</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Estimated Date</label>
+                <input type="date" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Email</label>
+                <input type="email" placeholder="captain@example.com" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+1 (555) 000-0000" required>
+              </div>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" style="min-width: 240px;">Check Availability</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .split-card {
+        background: var(--surface);
+        border-radius: var(--radius);
+        overflow: hidden;
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+      }
+
+      .split-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 48px rgba(30, 111, 168, 0.18);
+      }
+
+      [data-theme="dark"] .split-card:hover {
+        box-shadow: 0 16px 48px rgba(245, 208, 96, 0.1);
+      }
+
+      .split-card-img {
+        position: relative;
+        overflow: hidden;
+        height: 280px;
+      }
+
+      .split-card-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .split-card:hover .split-card-img img {
+        transform: scale(1.06);
+      }
+
+      .split-card-img-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 12px 20px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+      }
+
+      .split-card-img-overlay span {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        color: #fff;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+      }
+
+      .split-content {
+        padding: 32px;
+      }
+
+      [data-theme="dark"] .split-content h2 {
+        color: var(--accent);
+      }
+
+      /* Inquiry Form Styles */
+      .inquiry-section {
+        padding: 100px 0;
+        background: var(--bg-alt);
+      }
+
+      .inquiry-card {
+        max-width: 800px;
+        margin: 0 auto;
+        background: var(--surface);
+        padding: 48px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+      }
+
+      .inquiry-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .inquiry-header h3 {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        color: var(--primary);
+        margin-bottom: 8px;
+      }
+
+      .inquiry-header p {
+        color: var(--text-muted);
+      }
+
+      .inquiry-form .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      .inquiry-form .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .inquiry-form label {
+        font-family: var(--font-ui);
+        font-weight: 700;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--text-muted);
+      }
+
+      .inquiry-form input,
+      .inquiry-form select {
+        padding: 12px 16px;
+        background: var(--bg);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-family: inherit;
+        color: var(--text);
+        transition: border-color 0.3s;
+      }
+
+      .inquiry-form input:focus,
+      .inquiry-form select:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+
+      .inquiry-form .form-actions {
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+      }
+
+      /* Dark mode calendar icon visibility */
+      [data-theme="dark"] .inquiry-form input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+      }
+
+      @media (max-width: 768px) {
+        .inquiry-card {
+          padding: 32px 24px;
+        }
+
+        .inquiry-form .form-row {
+          grid-template-columns: 1fr;
+          gap: 16px;
+        }
+
+        .inquiry-header h3 {
+          font-size: 1.75rem;
+        }
+      }
+    </style>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor"
+              style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to
+            high seas treasure hunts.</p>
+          <div class="social-links">
+            <a href="#"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+            <a href="#"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Party Types</h4>
+          <ul>
+            <li><a href="party-types.html">Pool Parties</a></li>
+            <li><a href="party-types.html">Land Parties</a></li>
+            <li><a href="themed-events.html">Themed Events</a></li>
+            <li><a href="characters.html">Characters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+1234567890">1-800-PIRATICA</a></li>
+            <li><a href="mailto:hello@piratica.com">hello@piratica.com</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Piratica Entertainment. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

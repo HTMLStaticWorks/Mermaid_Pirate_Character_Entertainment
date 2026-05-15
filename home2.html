@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home 2 | Piratica</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    /* Home 2 specific styles */
+    .hero-home2 {
+      position: relative;
+      height: 100vh;
+      background: linear-gradient(to bottom, rgba(13, 42, 62, 0.8), rgba(30, 111, 168, 0.9)), url('https://images.unsplash.com/photo-1518062863777-6bb9fdf718d7?auto=format&fit=crop&q=80&w=2070') no-repeat center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding-top: var(--nav-height);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      color: #fff;
+    }
+
+    .hero-content h1 {
+      font-size: 4.5rem;
+      color: #fff;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Horizontal package strip */
+    .package-strip {
+      display: flex;
+      overflow-x: auto;
+      gap: 24px;
+      padding: 40px 24px;
+      scrollbar-width: none;
+      /* Firefox */
+      scroll-snap-type: x mandatory;
+    }
+
+    .package-strip::-webkit-scrollbar {
+      display: none;
+    }
+
+    .package-item {
+      flex: 0 0 300px;
+      scroll-snap-align: center;
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+    }
+
+    .char-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .char-row.reverse .char-img-wrap {
+      order: 2;
+      padding-right: 0;
+      padding-left: 20px;
+    }
+
+    .char-row.reverse .char-img-wrap::after {
+      right: auto;
+      left: 0;
+      background: var(--secondary);
+    }
+
+    .char-row.reverse .char-content {
+      order: 1;
+    }
+
+    .char-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .char-content h2 {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .char-row.reverse .char-content h2 {
+      color: var(--secondary);
+    }
+
+    .char-content p {
+      margin-bottom: 32px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .char-img-wrap {
+      position: relative;
+      padding-bottom: 20px;
+      padding-right: 20px;
+    }
+
+    .char-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 80%;
+      height: 80%;
+      background: var(--primary);
+      z-index: -1;
+      border-radius: var(--radius);
+    }
+
+    .char-img-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 1024px) {
+      .char-asymmetric {
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .char-row {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .char-content {
+        order: 1 !important;
+        text-align: center;
+      }
+
+      .char-img-wrap {
+        order: 2 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+      }
+
+      .char-img-wrap::after {
+        display: none;
+      }
+
+      .char-img-wrap img {
+        height: 350px !important;
+      }
+
+      .char-content h2 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .hero-home2 {
+        padding-left: 16px;
+        padding-right: 16px;
+      }
+
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .typewriter-text {
+        font-size: 0.95rem;
+      }
+
+      .char-content {
+        padding: 0 10px;
+      }
+
+      .char-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+
+    body {
+      overflow-x: hidden;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Drawer Overlay & Menu (Reused) -->
+  <div class="drawer-overlay"></div>
+  <aside class="drawer">
+    <div class="drawer-header">
+      <div class="logo">Piratica <i class="ph ph-anchor"></i></div>
+      <button class="close-drawer" aria-label="Close menu"><i class="ph ph-x"></i></button>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html" class="active">Home 2</a>
+      <a href="characters.html">Characters</a>
+      <a href="packages.html">Packages</a>
+      <a href="party-types.html">Party Types</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="blog.html">Blog</a>
+      <a href="booking.html">Book Now</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a href="login.html" class="btn btn-primary"
+      style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <div class="drawer-actions">
+      <button class="action-btn theme-toggle" aria-label="Toggle Dark Mode"><i class="ph ph-moon"></i></button>
+      <button class="action-btn rtl-toggle" aria-label="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </aside>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">Piratica <i class="ph ph-anchor"></i></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html" class="active">Home 2</a>
+        <a href="characters.html">Characters</a>
+        <a href="packages.html">Packages</a>
+        <a href="party-types.html">Party Types</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="blog.html">Blog</a>
+        <a href="booking.html">Book Now</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+        <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <a href="login.html" class="btn btn-primary">Login</a>
+        <button class="hamburger">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Immersive Underwater Hero -->
+    <section class="hero-home2"
+      style="background: url('assets/images/hero-home2-bg.jpg') no-repeat center center / cover; background-attachment: fixed;">
+      <!-- Floating Bubbles -->
+      <div class="bubble" style="left: 10%; animation-duration: 8s; width: 40px; height: 40px;"></div>
+      <div class="bubble" style="left: 30%; animation-duration: 12s; width: 60px; height: 60px; animation-delay: 2s;">
+      </div>
+      <div class="bubble" style="left: 60%; animation-duration: 10s; width: 30px; height: 30px; animation-delay: 1s;">
+      </div>
+      <div class="bubble" style="left: 80%; animation-duration: 15s; width: 50px; height: 50px; animation-delay: 4s;">
+      </div>
+
+      <div class="hero-content container">
+        <h1>Dive Into Magic</h1>
+        <p style="font-size: 1.5rem; margin-bottom: 2rem; font-family: var(--font-ui);"><span class="typewriter-text">An
+            unforgettable experience for your child.</span></p>
+        <a href="booking.html" class="btn btn-primary" style="font-size: 1.1rem;">Plan Your Event</a>
+      </div>
+    </section>
+
+
+    <!-- Asymmetric Character Layout -->
+    <section class="bg-alt">
+      <div class="container">
+        <div class="char-row">
+          <div class="char-img-wrap">
+            <img src="assets/images/mermaid-feature.jpg" alt="Mermaid">
+          </div>
+          <div class="char-content">
+            <h2>Enchanting Mermaids</h2>
+            <p>Bring the mystery and beauty of the ocean to your pool party. Our mermaids interact with guests, teach
+              swimming games, and provide beautiful photo opportunities.</p>
+            <a href="characters.html" class="btn btn-secondary">Meet the Mermaids</a>
+          </div>
+        </div>
+
+        <div class="char-row reverse">
+          <div class="char-img-wrap">
+            <img src="assets/images/pirate-feature.jpg" alt="Pirate">
+          </div>
+          <div class="char-content">
+            <h2>Daring Pirates</h2>
+            <p>Set sail on a backyard adventure. Our pirate captains lead treasure hunts, teach swordplay (with foam
+              swords!), and tell tall tales of the high seas.</p>
+            <a href="characters.html" class="btn btn-primary">Meet the Pirates</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-ocean-bg"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <h2 class="section-title" style="margin-bottom: 8px;">Our Voyage in Numbers</h2>
+        <p class="section-subtitle" style="margin-bottom: 60px;">Years of making waves across every shore</p>
+
+        <div class="stats-grid">
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="ph ph-anchor"></i></div>
+            <div class="stat-number" data-target="500">0</div>
+            <div class="stat-suffix">+</div>
+            <div class="stat-label">Parties Performed</div>
+            <div class="stat-wave"></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="ph ph-star"></i></div>
+            <div class="stat-number" data-target="8">0</div>
+            <div class="stat-suffix">+</div>
+            <div class="stat-label">Years of Magic</div>
+            <div class="stat-wave"></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="ph ph-smiley"></i></div>
+            <div class="stat-number" data-target="100">0</div>
+            <div class="stat-suffix">%</div>
+            <div class="stat-label">Happy Families</div>
+            <div class="stat-wave"></div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon"><i class="ph ph-map-pin"></i></div>
+            <div class="stat-number" data-target="12">0</div>
+            <div class="stat-suffix">+</div>
+            <div class="stat-label">Cities Covered</div>
+            <div class="stat-wave"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <script>
+      const statNumbers = document.querySelectorAll('.stat-number');
+
+      const countUp = (el) => {
+        const target = +el.dataset.target;
+        const duration = 1800;
+        const step = target / (duration / 16);
+        let current = 0;
+        const timer = setInterval(() => {
+          current += step;
+          if (current >= target) {
+            el.textContent = target;
+            clearInterval(timer);
+          } else {
+            el.textContent = Math.floor(current);
+          }
+        }, 16);
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            countUp(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      statNumbers.forEach(n => observer.observe(n));
+    </script>
+
+    <!-- Party Environments -->
+    <section class="party-env-section">
+      <div class="container">
+        <h2 class="section-title">Choose Your World</h2>
+        <p class="section-subtitle" style="margin-bottom: 48px;">Two magical settings, one unforgettable experience</p>
+
+        <div class="party-env-grid">
+
+          <!-- Pool Party -->
+          <div class="party-env-card">
+            <img src="assets/images/env-pool.jpg" alt="Pool Party" loading="lazy">
+            <div class="party-env-overlay">
+              <div class="party-env-content">
+                <div class="party-env-icon"><i class="ph ph-waves"></i></div>
+                <h3>Pool Parties</h3>
+                <p>Mermaids glide through crystal waters while pirates rule the poolside. The ultimate summer splash
+                  experience for your little ones.</p>
+                <ul class="party-env-list">
+                  <li><i class="ph ph-check-circle"></i> Swimming Mermaid Performances</li>
+                  <li><i class="ph ph-check-circle"></i> Water-Safe Activities</li>
+                  <li><i class="ph ph-check-circle"></i> Floating Photo Ops</li>
+                  <li><i class="ph ph-check-circle"></i> Poolside Treasure Hunt</li>
+                </ul>
+                <a href="party-types.html" class="btn btn-primary" style="margin-top: 24px;">Explore Pool Parties</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Land Party -->
+          <div class="party-env-card">
+            <img src="assets/images/env-land.jpg" alt="Land Party" loading="lazy">
+            <div class="party-env-overlay">
+              <div class="party-env-content">
+                <div class="party-env-icon"><i class="ph ph-island"></i></div>
+                <h3>Land Parties</h3>
+                <p>Transform your backyard or living room into a pirate ship deck or enchanted mermaid grotto. Magic on
+                  dry land!</p>
+                <ul class="party-env-list">
+                  <li><i class="ph ph-check-circle"></i> Epic Treasure Hunts</li>
+                  <li><i class="ph ph-check-circle"></i> Face Painting & Crafts</li>
+                  <li><i class="ph ph-check-circle"></i> Foam Sword Training</li>
+                  <li><i class="ph ph-check-circle"></i> Storytelling & Games</li>
+                </ul>
+                <a href="party-types.html" class="btn btn-primary" style="margin-top: 24px;">Explore Land Parties</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .party-env-section {
+        background: var(--bg);
+        transition: background 0.3s ease;
+      }
+
+      .party-env-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+      }
+
+      .party-env-card {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+        height: 520px;
+        cursor: pointer;
+      }
+
+      .party-env-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.6s ease;
+      }
+
+      .party-env-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(10, 30, 50, 0.95) 0%, rgba(10, 30, 50, 0.4) 50%, rgba(10, 30, 50, 0.1) 100%);
+        display: flex;
+        align-items: flex-end;
+        padding: 40px;
+        transition: background 0.5s ease;
+      }
+
+      .party-env-card:hover img {
+        transform: scale(1.07);
+      }
+
+      .party-env-card:hover .party-env-overlay {
+        background: linear-gradient(to top, rgba(10, 30, 50, 0.97) 0%, rgba(10, 30, 50, 0.75) 60%, rgba(10, 30, 50, 0.3) 100%);
+      }
+
+      .party-env-content {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .party-env-icon {
+        font-size: 3rem;
+        color: var(--accent);
+        margin-bottom: 16px;
+        transform: translateY(10px);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+      }
+
+      .party-env-content h3 {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        color: #fff;
+        margin-bottom: 16px;
+        transform: translateY(0);
+        transition: transform 0.4s ease;
+      }
+
+      .party-env-content p {
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.7;
+        margin-bottom: 20px;
+        max-width: 340px;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.4s ease 0.05s, transform 0.4s ease 0.05s;
+      }
+
+      .party-env-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 8px;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.4s ease 0.1s, transform 0.4s ease 0.1s;
+        width: 100%;
+        max-width: 260px;
+      }
+
+      .party-env-list li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--font-ui);
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .party-env-list li i {
+        color: var(--accent);
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+
+      .party-env-content .btn {
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.4s ease 0.15s, transform 0.4s ease 0.15s;
+      }
+
+      /* Hover reveals everything */
+      .party-env-card:hover .party-env-icon {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .party-env-card:hover .party-env-content p,
+      .party-env-card:hover .party-env-list,
+      .party-env-card:hover .party-env-content .btn {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1024px) {
+        .party-env-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+
+        .party-env-card {
+          height: 480px;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .party-env-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .party-env-card {
+          height: 420px;
+        }
+      }
+
+      @media (max-width: 360px) {
+        .party-env-card {
+          height: 440px;
+        }
+
+        .party-env-overlay {
+          padding: 20px;
+        }
+
+        .party-env-icon {
+          font-size: 2.2rem;
+          margin-bottom: 8px;
+        }
+
+        .party-env-content h3 {
+          font-size: 1.6rem;
+          margin-bottom: 8px;
+        }
+
+        .party-env-content p {
+          font-size: 0.85rem;
+          margin-bottom: 12px;
+          line-height: 1.5;
+        }
+
+        .party-env-list {
+          gap: 4px;
+        }
+
+        .party-env-list li {
+          font-size: 0.8rem;
+        }
+
+        .party-env-content .btn {
+          padding: 10px 20px !important;
+          font-size: 0.9rem !important;
+          margin-top: 12px !important;
+        }
+      }
+    </style>
+    <!-- Lightbox Grid Preview -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery2-grid">
+
+          <div class="gallery2-item">
+            <img src="assets/images/gallery2-1.jpg" loading="lazy" alt="Mermaid pool party with children">
+            <div class="gallery2-overlay">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Pool Party Magic</span>
+            </div>
+          </div>
+
+          <div class="gallery2-item">
+            <img src="assets/images/gallery2-2.jpg" loading="lazy" alt="Pirate treasure hunt adventure">
+            <div class="gallery2-overlay">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Treasure Hunt</span>
+            </div>
+          </div>
+
+          <div class="gallery2-item">
+            <img src="assets/images/gallery2-3.jpg" loading="lazy" alt="Children face painting at party">
+            <div class="gallery2-overlay">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Face Painting</span>
+            </div>
+          </div>
+
+          <div class="gallery2-item">
+            <img src="assets/images/gallery2-4.jpg" loading="lazy" alt="Pirate and mermaid party celebration">
+            <div class="gallery2-overlay">
+              <i class="ph ph-magnifying-glass-plus"></i>
+              <span>Party Celebration</span>
+            </div>
+          </div>
+
+        </div>
+        <div class="text-center" style="margin-top: 32px;">
+          <a href="gallery.html" class="btn btn-secondary">View More</a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+      <div class="cta-banner-bg"></div>
+      <div class="container" style="position: relative; z-index: 1;">
+        <div class="cta-banner-inner">
+          <p class="cta-banner-tag">Limited Dates Available</p>
+          <h2 class="cta-banner-title">Ready to Set Sail?</h2>
+          <p class="cta-banner-sub">Book your Mermaid or Pirate adventure today and create memories that last a
+            lifetime.</p>
+          <div class="cta-banner-actions">
+            <a href="booking.html" class="btn cta-btn-primary">Book Now</a>
+            <a href="contact.html" class="btn cta-btn-ghost">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      .cta-banner {
+        position: relative;
+        overflow: hidden;
+        padding: 80px 0;
+        background: #0d2a3e;
+        transition: background 0.3s ease;
+      }
+
+      [data-theme="dark"] .cta-banner {
+        background: #000000;
+      }
+
+      .cta-banner-bg {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(ellipse at 15% 50%, rgba(245, 208, 96, 0.1) 0%, transparent 60%),
+          radial-gradient(ellipse at 85% 50%, rgba(30, 111, 168, 0.2) 0%, transparent 60%);
+        pointer-events: none;
+      }
+
+      .cta-banner-inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+      }
+
+      .cta-banner-tag {
+        font-family: var(--font-ui);
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 4px;
+      }
+
+      .cta-banner-title {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        color: #fff;
+        margin-bottom: 4px;
+      }
+
+      .cta-banner-sub {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.7);
+        max-width: 500px;
+        line-height: 1.7;
+        margin-bottom: 8px;
+      }
+
+      .cta-banner-actions {
+        display: flex;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 8px;
+      }
+
+      /* Equal size buttons */
+      .cta-btn-primary,
+      .cta-btn-ghost {
+        width: 180px;
+        padding: 14px 0;
+        font-size: 0.95rem;
+        justify-content: center;
+      }
+
+      .cta-btn-primary {
+        background: var(--secondary);
+        color: #fff;
+        border: 2px solid var(--secondary);
+        box-shadow: 0 4px 15px rgba(200, 83, 26, 0.35);
+      }
+
+      .cta-btn-primary:hover {
+        background: transparent;
+        color: var(--secondary);
+        border-color: var(--secondary);
+        box-shadow: none;
+      }
+
+      .cta-btn-ghost {
+        background: transparent;
+        color: #fff;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .cta-btn-ghost:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #fff;
+        color: #fff;
+      }
+    </style>
+
+  </main>
+
+  <footer>
+    <!-- Footer content identical to index.html -->
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col" style="grid-column: span 2;">
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor"
+              style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to
+            high seas treasure hunts.</p>
+          <div class="social-links">
+            <a href="#"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+            <a href="#"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Party Types</h4>
+          <ul>
+            <li><a href="party-types.html">Pool Parties</a></li>
+            <li><a href="party-types.html">Land Parties</a></li>
+            <li><a href="themed-events.html">Themed Events</a></li>
+            <li><a href="characters.html">Characters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+1234567890">1-800-PIRATICA</a></li>
+            <li><a href="mailto:hello@piratica.com">hello@piratica.com</a></li>
+            <li><a href="contact.html">Contact Form</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Piratica Entertainment. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

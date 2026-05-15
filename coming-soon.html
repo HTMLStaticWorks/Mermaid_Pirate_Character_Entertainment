@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | Piratica</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <style>
+    .cs-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1518062863777-6bb9fdf718d7?auto=format&fit=crop&q=80&w=2070') no-repeat center/cover;
+      color: #fff;
+      padding: 24px;
+    }
+    .cs-content {
+      max-width: 600px;
+      width: 100%;
+    }
+    .cs-content h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin: 48px 0;
+    }
+    .cd-item {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: var(--radius);
+      padding: 16px;
+      min-width: 90px;
+    }
+    .cd-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      font-family: var(--font-ui);
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .cd-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-family: var(--font-ui);
+    }
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+      margin-top: 32px;
+    }
+    .newsletter-form input {
+      flex: 1;
+      padding: 14px 24px;
+      border-radius: 30px;
+      border: none;
+      font-family: var(--font-body);
+    }
+    .newsletter-form button {
+      border-radius: 30px;
+    }
+    @media (max-width: 600px) {
+      .countdown { gap: 12px; }
+      .cd-item { min-width: 70px; padding: 12px; }
+      .cd-number { font-size: 1.8rem; }
+      .newsletter-form { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cs-page">
+    <div class="cs-content">
+      <div class="logo" style="justify-content: center; color: #fff; font-size: 2.5rem; margin-bottom: 24px;">Piratica <i class="ph ph-anchor" style="color: var(--accent);"></i></div>
+      <h1>A New Adventure is Brewing</h1>
+      <p style="font-size: 1.2rem; opacity: 0.9;">We are preparing our ships and tuning our harps. The ultimate children's entertainment experience drops anchor soon.</p>
+
+      <div class="countdown">
+        <div class="cd-item">
+          <div class="cd-number" id="days">00</div>
+          <div class="cd-label">Days</div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-number" id="hours">00</div>
+          <div class="cd-label">Hours</div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-number" id="minutes">00</div>
+          <div class="cd-label">Minutes</div>
+        </div>
+        <div class="cd-item">
+          <div class="cd-number" id="seconds">00</div>
+          <div class="cd-label">Seconds</div>
+        </div>
+      </div>
+
+      <p style="font-family: var(--font-ui); font-size: 0.9rem;">Join the captain's log to be notified when we launch.</p>
+      
+      <!-- Mailchimp Embed Placeholder -->
+      <form class="newsletter-form" onsubmit="event.preventDefault(); this.innerHTML = '<p style=\'margin-top:20px; font-weight:700; color:var(--accent);\'>You are on the list, matey!</p>'">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit" class="btn btn-primary" style="background: var(--accent); color: #000;">Notify Me</button>
+      </form>
+      <!-- End Mailchimp -->
+
+    </div>
+  </div>
+
+  <script>
+    // Countdown Timer Logic
+    const countDownDate = new Date().getTime() + (14 * 24 * 60 * 60 * 1000); // 14 days from now
+
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days < 10 ? '0' + days : days;
+      document.getElementById("hours").innerHTML = hours < 10 ? '0' + hours : hours;
+      document.getElementById("minutes").innerHTML = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById("seconds").innerHTML = seconds < 10 ? '0' + seconds : seconds;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("days").innerHTML = "00";
+        document.getElementById("hours").innerHTML = "00";
+        document.getElementById("minutes").innerHTML = "00";
+        document.getElementById("seconds").innerHTML = "00";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
