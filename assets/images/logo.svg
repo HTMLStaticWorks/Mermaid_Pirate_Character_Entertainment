@@ -1,0 +1,45 @@
+<svg width="100%" viewBox="0 0 680 160" role="img" xmlns="http://www.w3.org/2000/svg" style="">
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Piratica Logo</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Piratica wordmark with a mermaid-anchor icon in darker golden yellow</desc>
+
+  
+
+  <!-- Icon group, slightly smaller, vertically centered -->
+  <g transform="translate(55, 80) scale(0.82)" style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
+
+    <!-- Anchor ring top -->
+    <circle cx="0" cy="-26" r="10" fill="none" stroke="#c49a10" stroke-width="6" style="fill:none;stroke:rgb(196, 154, 16);color:rgb(255, 255, 255);stroke-width:6px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Anchor vertical bar -->
+    <line x1="0" y1="-16" x2="0" y2="30" stroke="#c49a10" stroke-width="6" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgb(196, 154, 16);color:rgb(255, 255, 255);stroke-width:6px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Anchor horizontal bar -->
+    <line x1="-18" y1="-4" x2="18" y2="-4" stroke="#c49a10" stroke-width="6" stroke-linecap="round" style="fill:rgb(0, 0, 0);stroke:rgb(196, 154, 16);color:rgb(255, 255, 255);stroke-width:6px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Left fluke -->
+    <path d="M-22,20 C-30,28 -28,40 -14,38 C-6,37 0,30 0,30" fill="none" stroke="#c49a10" stroke-width="5.5" stroke-linecap="round" style="fill:none;stroke:rgb(196, 154, 16);color:rgb(255, 255, 255);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Right fluke -->
+    <path d="M22,20 C30,28 28,40 14,38 C6,37 0,30 0,30" fill="none" stroke="#c49a10" stroke-width="5.5" stroke-linecap="round" style="fill:none;stroke:rgb(196, 154, 16);color:rgb(255, 255, 255);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Tail fin left -->
+    <path d="M-14,38 C-20,46 -26,50 -18,54 C-10,58 -6,50 0,46" fill="#c49a10" style="fill:rgb(196, 154, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <!-- Tail fin right -->
+    <path d="M14,38 C20,46 26,50 18,54 C10,58 6,50 0,46" fill="#c49a10" style="fill:rgb(196, 154, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Scale hints -->
+    <path d="M-14,38 C-12,42 -8,44 -6,42" fill="none" stroke="#9e7a08" stroke-width="1.5" stroke-linecap="round" style="fill:none;stroke:rgb(158, 122, 8);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <path d="M14,38 C12,42 8,44 6,42" fill="none" stroke="#9e7a08" stroke-width="1.5" stroke-linecap="round" style="fill:none;stroke:rgb(158, 122, 8);color:rgb(255, 255, 255);stroke-width:1.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Anchor feet -->
+    <path d="M0,30 C-4,26 -14,26 -18,20" fill="none" stroke="#c49a10" stroke-width="5.5" stroke-linecap="round" style="fill:none;stroke:rgb(196, 154, 16);color:rgb(255, 255, 255);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+    <path d="M0,30 C4,26 14,26 18,20" fill="none" stroke="#c49a10" stroke-width="5.5" stroke-linecap="round" style="fill:none;stroke:rgb(196, 154, 16);color:rgb(255, 255, 255);stroke-width:5.5px;stroke-linecap:round;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+    <!-- Star accent -->
+    <polygon points="12,-36 13.2,-32.6 16.8,-32.6 14,-30.4 15.2,-27 12,-29.2 8.8,-27 10,-30.4 7.2,-32.6 10.8,-32.6" fill="#c49a10" style="fill:rgb(196, 154, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  </g>
+
+  <!-- Wordmark -->
+  <text x="102" y="100" style="fill:rgb(196, 154, 16);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Cinzel Decorative&quot;, &quot;Palatino Linotype&quot;, Georgia, serif;font-size:54px;font-weight:700;text-anchor:start;dominant-baseline:auto">Piratica</text>
+
+</svg>
