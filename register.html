@@ -9,21 +9,139 @@
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
     body {
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
+
+    .auth-toggles {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      display: flex;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    [dir="rtl"] .auth-toggles {
+      right: auto;
+      left: 24px;
+    }
+
+    .password-wrap {
+      position: relative;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      color: var(--text);
+      opacity: 0.6;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      transition: opacity 0.3s;
+      z-index: 10;
+    }
+
+    .password-toggle:hover {
+      opacity: 1;
+    }
+
+    [dir="rtl"] .password-toggle {
+      right: auto;
+      left: 16px;
+     }
+
+    .auth-card a {
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .auth-card a:hover {
+      color: var(--secondary) !important;
+      transform: translateY(-1px);
+    }
+
+    .social-btn {
+      transition: all 0.3s ease !important;
+    }
+
+    .social-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      background: var(--surface);
+    }
+
+    .btn-primary {
+      transition: all 0.3s ease !important;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(30, 111, 168, 0.4);
+      filter: brightness(1.05);
+    }
+
+    [data-theme="dark"] .btn-primary:hover {
+      box-shadow: 0 8px 25px rgba(245, 208, 96, 0.2);
+    }
+
+    .password-wrap .form-control {
+      padding-right: 48px;
+    }
+
+    [dir="rtl"] .password-wrap .form-control {
+      padding-right: 16px;
+      padding-left: 48px;
+    }
+
     @media (max-width: 600px) {
-      body { overflow: auto; }
-      .auth-page { padding: 16px; align-items: flex-start; min-height: auto; }
-      .auth-card { padding: 24px; margin-top: 24px; }
+      body {
+        overflow: auto;
+      }
+
+      .auth-page {
+        padding: 60px 16px 16px; /* Added more top padding for toggles */
+        align-items: flex-start;
+        min-height: auto;
+      }
+
+      .auth-card {
+        padding: 24px;
+        margin-top: 0;
+      }
+
+      .auth-toggles {
+        top: 12px;
+        right: 12px;
+      }
+
+      [dir="rtl"] .auth-toggles {
+        left: 12px;
+        right: auto;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <div class="auth-toggles">
+    <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
+    <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+  </div>
 
   <div class="auth-page">
     <div class="auth-card">
-      <div class="logo" style="justify-content: center; margin-bottom: 24px;">Piratica <i class="ph ph-anchor"></i></div>
-      <h2 style="font-family: var(--font-display); color: var(--primary); margin-bottom: 32px;">Join the Crew</h2>
+      <a href="index.html" class="logo" style="justify-content: center; margin-bottom: 24px; text-decoration: none;">Piratica <i class="ph ph-anchor"></i></a>
+      <h2 style="font-family: var(--font-display); color: var(--primary); margin-bottom: 32px; font-size: 1.6rem;">Join the Crew</h2>
       
       <form novalidate>
         <div class="form-group">
@@ -36,22 +154,30 @@
           <input type="email" class="form-control" name="email" required placeholder="you@example.com">
           <div class="form-error">Please enter a valid email</div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-          <div class="form-group">
-            <label class="form-label">Password</label>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <div class="password-wrap">
             <input type="password" class="form-control" name="password" required placeholder="••••••••">
-            <div class="form-error">Must be at least 8 chars</div>
+            <button type="button" class="password-toggle">
+              <i class="ph ph-eye"></i>
+            </button>
           </div>
-          <div class="form-group">
-            <label class="form-label">Confirm Password</label>
+          <div class="form-error">Must be at least 8 chars</div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirm Password</label>
+          <div class="password-wrap">
             <input type="password" class="form-control" name="confirm_password" required placeholder="••••••••">
-            <div class="form-error">Passwords must match</div>
+            <button type="button" class="password-toggle">
+              <i class="ph ph-eye"></i>
+            </button>
           </div>
+          <div class="form-error">Passwords must match</div>
         </div>
         
         <label class="checkbox-wrap">
           <input type="checkbox" name="terms" required> 
-          <span style="font-size: 0.9rem; font-family: var(--font-ui);">I accept the <a href="#" style="color: var(--primary); font-weight: 700;">Terms & Conditions</a></span>
+          <span style="font-size: 0.9rem; font-family: var(--font-ui);">I accept the <a href="#" style="color: var(--primary); font-weight: 700;">Terms & Conditions</a> & <a href="#" style="color: var(--primary); font-weight: 700;">Privacy Policy</a></span>
         </label>
         <div class="form-error" style="margin-top: -16px; margin-bottom: 24px;">You must accept the terms to proceed.</div>
 
@@ -60,12 +186,19 @@
 
       <div class="auth-divider"><span>OR</span></div>
 
-      <button class="social-btn" style="border-color: #d32f2f; color: #d32f2f;">
-        <i class="ph-fill ph-google-logo" style="font-size: 1.2rem;"></i> Continue with Google
+      <button class="social-btn" style="background: var(--surface); border-color: var(--border); color: var(--text);">
+        <i class="ph-bold ph-google-logo" style="color: #4285F4;"></i> Continue with Google
       </button>
-      <button class="social-btn">
-        <i class="ph ph-envelope-simple" style="font-size: 1.2rem;"></i> Continue with Email
+      <button class="social-btn" style="background: #000; color: #fff; border: none;">
+        <i class="ph-fill ph-apple-logo"></i> Continue with Apple
       </button>
+
+      <style>
+        [data-theme="dark"] .social-btn[style*="background: #000"] {
+          background: #fff !important;
+          color: #000 !important;
+        }
+      </style>
 
       <div class="auth-links">
         Already have an account? <a href="login.html">Login</a>
@@ -74,5 +207,23 @@
   </div>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    // Password Toggle Logic
+    document.querySelectorAll('.password-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const input = btn.parentElement.querySelector('input');
+        const icon = btn.querySelector('i');
+
+        if (input.type === 'password') {
+          input.type = 'text';
+          icon.classList.replace('ph-eye', 'ph-eye-slash');
+        } else {
+          input.type = 'password';
+          icon.classList.replace('ph-eye-slash', 'ph-eye');
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>

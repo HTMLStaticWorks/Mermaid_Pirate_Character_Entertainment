@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
       gap: 12px;
       margin-bottom: 40px;
     }
+
     .filter-btn {
       background: var(--surface);
       border: 1px solid var(--border);
@@ -26,16 +28,20 @@
       font-weight: 600;
       transition: all 0.3s;
     }
-    .filter-btn.active, .filter-btn:hover {
+
+    .filter-btn.active,
+    .filter-btn:hover {
       background: var(--primary);
       color: #fff;
       border-color: var(--primary);
     }
+
     .gallery-grid {
       /* Columns setup for masonry look */
       column-count: 3;
       column-gap: 16px;
     }
+
     .gallery-item {
       break-inside: avoid;
       margin-bottom: 16px;
@@ -44,18 +50,24 @@
       border-radius: var(--radius);
       overflow: hidden;
     }
+
     .gallery-item img {
       width: 100%;
       border-radius: var(--radius);
       transition: transform 0.5s ease;
     }
+
     .gallery-item:hover img {
       transform: scale(1.05);
     }
+
     .gallery-overlay {
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(30,111,168,0.7);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(30, 111, 168, 0.7);
       color: #fff;
       display: flex;
       align-items: center;
@@ -64,17 +76,31 @@
       transition: opacity 0.3s ease;
       font-size: 2rem;
     }
+
     .gallery-item:hover .gallery-overlay {
       opacity: 1;
     }
-    @media (max-width: 1024px) { .gallery-grid { column-count: 2; } }
-    @media (max-width: 600px) { .gallery-grid { column-count: 1; } }
+
+    @media (max-width: 1024px) {
+      .gallery-grid {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .gallery-grid {
+        column-count: 1;
+      }
+    }
 
     /* Lightbox */
     .lightbox {
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.9);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
       z-index: 2000;
       display: flex;
       align-items: center;
@@ -83,16 +109,19 @@
       visibility: hidden;
       transition: all 0.3s ease;
     }
+
     .lightbox.active {
       opacity: 1;
       visibility: visible;
     }
+
     .lightbox img {
       max-width: 90%;
       max-height: 90%;
       border-radius: var(--radius);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
+
     .lightbox-close {
       position: absolute;
       top: 24px;
@@ -103,8 +132,56 @@
       background: none;
       border: none;
     }
+
+    /* FAQ Section Styles */
+    .faq-accordion {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 24px;
+      font-family: var(--font-ui);
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .faq-question {
+      color: var(--accent);
+    }
+
+    .faq-answer {
+      padding: 0 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      opacity: 0.9;
+    }
+
+    .faq-item.active .faq-answer {
+      padding: 0 24px 24px;
+      max-height: 500px;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(180deg);
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Drawer Overlay & Menu -->
@@ -125,7 +202,8 @@
       <a href="booking.html">Book Now</a>
       <a href="contact.html">Contact</a>
     </nav>
-      <a href="login.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <a href="login.html" class="btn btn-primary"
+      style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
     <div class="drawer-actions">
       <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
       <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
@@ -158,10 +236,16 @@
   </header>
 
   <main style="padding-top: var(--nav-height);">
+    <!-- Page Header -->
+    <section style="background: var(--surface); padding: 80px 0;">
+      <div class="container text-center">
+        <h1 style="color: var(--primary);">Magical Memories</h1>
+        <p class="section-subtitle">Browse through our past adventures</p>
+      </div>
+    </section>
+
     <section>
       <div class="container">
-        <h1 class="section-title">Magical Memories</h1>
-        <p class="section-subtitle">Browse through our past adventures</p>
 
         <div class="gallery-filters">
           <button class="filter-btn active" data-filter="all">All</button>
@@ -172,39 +256,55 @@
         </div>
 
         <div class="gallery-grid">
-          <!-- Images -->
+
+          <!-- Pool 1 -->
           <div class="gallery-item" data-category="pool">
-            <img src="https://images.unsplash.com/photo-1540152431786-fb7c6afc949a?auto=format&fit=crop&q=80&w=600" loading="lazy" alt="Pool Party">
+            <img src="assets/images/gal-pool-1.jpg" loading="lazy" alt="Pool Party">
             <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
           </div>
+
+          <!-- Land 1 -->
           <div class="gallery-item" data-category="land">
-            <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=600" loading="lazy" alt="Land Party">
+            <img src="assets/images/gal-land-1.jpg" loading="lazy" alt="Land Party">
             <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
           </div>
+
+          <!-- Character 1 -->
           <div class="gallery-item" data-category="character">
-            <img src="https://images.unsplash.com/photo-1594957545938-f10d21e89bd4?auto=format&fit=crop&q=80&w=600" loading="lazy" alt="Mermaid Character">
+            <img src="assets/images/gal-char-1.jpg" loading="lazy" alt="Mermaid Character">
             <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
           </div>
+
+          <!-- Pool 2 -->
           <div class="gallery-item" data-category="pool">
-            <img src="https://images.unsplash.com/photo-1506869640319-ce1a44a1bb0b?auto=format&fit=crop&q=80&w=600" loading="lazy" alt="Pool Party">
+            <img src="assets/images/gal-pool-2.jpg" loading="lazy" alt="Pool Party">
             <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
           </div>
+
+          <!-- Character 2 -->
           <div class="gallery-item" data-category="character">
-            <img src="https://images.unsplash.com/photo-1627916327315-7798782a20bd?auto=format&fit=crop&q=80&w=600" loading="lazy" alt="Pirate Character">
+            <img src="assets/images/gal-char-2.jpg" loading="lazy" alt="Pirate Character">
             <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
           </div>
+
+          <!-- Theme 1 -->
           <div class="gallery-item" data-category="theme">
-            <img src="https://images.unsplash.com/photo-1565257960682-1c62f2f53412?auto=format&fit=crop&q=80&w=600" loading="lazy" alt="Themed Event">
+            <img src="assets/images/gal-theme-1.jpg" loading="lazy" alt="Themed Event">
             <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
           </div>
+
+          <!-- Land 2 -->
           <div class="gallery-item" data-category="land">
-            <img src="https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&q=80&w=600" loading="lazy" alt="Land Party">
+            <img src="assets/images/gal-land-2.jpg" loading="lazy" alt="Land Party">
             <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
           </div>
+
+          <!-- Theme 2 -->
           <div class="gallery-item" data-category="theme">
-            <img src="https://images.unsplash.com/photo-1518062863777-6bb9fdf718d7?auto=format&fit=crop&q=80&w=600" loading="lazy" alt="Themed Event">
+            <img src="assets/images/gal-theme-2.jpg" loading="lazy" alt="Themed Event">
             <div class="gallery-overlay"><i class="ph ph-magnifying-glass-plus"></i></div>
           </div>
+
         </div>
       </div>
     </section>
@@ -214,14 +314,37 @@
       <button class="lightbox-close" id="lightboxClose"><i class="ph ph-x"></i></button>
       <img src="" alt="Lightbox Image" id="lightboxImg">
     </div>
+
+    <!-- FAQ Section -->
+    <section class="bg-alt">
+      <div class="container">
+        <h2 class="section-title">Gallery FAQ</h2>
+        <div class="faq-accordion">
+          <div class="faq-item">
+            <div class="faq-question">Can we download the photos from the gallery? <i class="ph ph-caret-down"></i></div>
+            <div class="faq-answer">These are examples of our past events. For your own party, our characters are happy to pose for unlimited photos with your guests!</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Are the costumes in the photos exactly what we'll see? <i class="ph ph-caret-down"></i></div>
+            <div class="faq-answer">Yes! We take pride in our high-quality, custom-made costumes. What you see in the gallery is a true representation of our characters.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">Do you have more photos of specific characters? <i class="ph ph-caret-down"></i></div>
+            <div class="faq-answer">Certainly! Contact us and we can send you a dedicated lookbook for any character you are interested in.</div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col" style="grid-column: span 2;">
-          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor" style="color: var(--accent);"></i></div>
-          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to high seas treasure hunts.</p>
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor"
+              style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to
+            high seas treasure hunts.</p>
           <div class="social-links">
             <a href="#"><i class="ph ph-instagram-logo"></i></a>
             <a href="#"><i class="ph ph-facebook-logo"></i></a>
@@ -309,9 +432,19 @@
           lightbox.classList.remove('active');
         }
       });
+
+      // FAQ Logic
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        question.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+          faqItems.forEach(i => i.classList.remove('active'));
+          if (!isActive) item.classList.add('active');
+        });
+      });
     });
   </script>
 </body>
+
 </html>
-
-

@@ -66,15 +66,15 @@ h6 {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 5vw, 2rem);
 }
 
 a {
@@ -545,10 +545,13 @@ footer {
 .social-links a {
   font-size: 1.5rem;
   color: #fff;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: inline-block;
 }
 
 .social-links a:hover {
   color: var(--accent);
+  transform: translateY(-5px) scale(1.1);
 }
 
 .footer-bottom {
@@ -809,6 +812,14 @@ footer {
 }
 
 @media (max-width: 360px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
   .auth-card {
     padding: 24px;
   }
@@ -825,6 +836,27 @@ footer {
   .drawer-links .btn {
     padding: 14px 24px !important;
     font-size: 1.1rem !important;
+  }
+
+  /* Page Header Adjustments */
+  main section[style*="padding: 80px 0"] {
+    padding: 40px 0 !important;
+  }
+
+  h1 {
+    font-size: 1.7rem !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.7rem !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: 1px !important;
+    line-height: 1.4;
   }
 }
 

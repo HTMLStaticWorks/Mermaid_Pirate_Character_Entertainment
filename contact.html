@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,26 +14,42 @@
       grid-template-columns: 1fr 1fr;
       gap: 48px;
     }
+
     .contact-info {
       background: var(--surface);
       padding: 48px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
+      text-align: center;
     }
+
+    .form-group {
+      text-align: center;
+    }
+
+    .form-label {
+      text-align: center;
+    }
+
     .contact-info-item {
       display: flex;
-      align-items: flex-start;
-      gap: 16px;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
       margin-bottom: 24px;
+      text-align: center;
     }
+
     .contact-info-item i {
       font-size: 2rem;
       color: var(--primary);
     }
+
     .contact-info-item h4 {
       margin-bottom: 4px;
       font-family: var(--font-display);
     }
+
     .map-container {
       width: 100%;
       height: 300px;
@@ -40,22 +57,50 @@
       overflow: hidden;
       margin-top: 32px;
     }
+
+    .contact-info .social-links {
+      justify-content: center;
+      gap: 20px;
+    }
+    .contact-info .social-links a {
+      color: var(--primary);
+      font-size: 1.8rem;
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      display: inline-block;
+    }
+    .contact-info .social-links a:hover {
+      color: var(--secondary);
+      transform: translateY(-5px) scale(1.2);
+    }
+
     .map-container iframe {
       width: 100%;
       height: 100%;
       border: 0;
     }
+
     @media (max-width: 992px) {
-      .contact-layout { grid-template-columns: 1fr; }
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
     }
+
     @media (max-width: 360px) {
-      .contact-layout { gap: 24px; }
-      .contact-info { padding: 24px; text-align: center; }
-      .contact-info-item { flex-direction: column; align-items: center; text-align: center; }
-      section { padding: 40px 0; }
+      .contact-layout {
+        gap: 24px;
+      }
+
+      .contact-info {
+        padding: 24px;
+      }
+
+      section {
+        padding: 40px 0;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Drawer Overlay & Menu -->
@@ -76,7 +121,8 @@
       <a href="booking.html">Book Now</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
-      <a href="login.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <a href="login.html" class="btn btn-primary"
+      style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
     <div class="drawer-actions">
       <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
       <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
@@ -109,18 +155,22 @@
   </header>
 
   <main style="padding-top: var(--nav-height);">
+    <!-- Page Header -->
+    <section style="background: var(--surface); padding: 80px 0;">
+      <div class="container text-center">
+        <h1 style="color: var(--primary);">Drop Us a Line</h1>
+        <p class="section-subtitle">Send a message to our crew</p>
+      </div>
+    </section>
+
     <section>
       <div class="container">
-        <div class="text-center" style="margin-bottom: 48px;">
-          <h1 style="color: var(--primary);">Drop Us a Line</h1>
-          <p class="section-subtitle">We'd love to hear from you</p>
-        </div>
 
         <div class="contact-layout">
-          
+
           <!-- Contact Form -->
           <div>
-            <h3 style="margin-bottom: 24px; font-family: var(--font-display);">Send a Message</h3>
+            <h3 style="margin-bottom: 24px; font-family: var(--font-display); text-align: center;">Send a Message</h3>
             <form action="https://formspree.io/f/placeholder" method="POST" novalidate>
               <div class="form-group">
                 <label class="form-label">Name</label>
@@ -132,13 +182,33 @@
                 <input type="email" class="form-control" name="email" required placeholder="jack@sea.com">
                 <div class="form-error">Please enter a valid email</div>
               </div>
+
               <div class="form-group">
-                <label class="form-label">Phone (Optional)</label>
-                <input type="tel" class="form-control" name="phone" placeholder="(555) 123-4567">
+                <label class="form-label">Event Date</label>
+                <input type="date" class="form-control" name="eventDate">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Party Type</label>
+                <select class="form-control" name="partyType">
+                  <option value="">Select Party Type</option>
+                  <option value="pool">Pool Party</option>
+                  <option value="land">Land Party</option>
+                  <option value="corporate">Corporate Event</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Preferred Character</label>
+                <select class="form-control" name="character">
+                  <option value="">Select Character</option>
+                  <option value="mermaid">Mermaid</option>
+                  <option value="pirate">Pirate</option>
+                  <option value="both">Both</option>
+                </select>
               </div>
               <div class="form-group">
                 <label class="form-label">Message</label>
-                <textarea class="form-control" name="message" rows="5" required placeholder="How can we help?"></textarea>
+                <textarea class="form-control" name="message" rows="5" required
+                  placeholder="How can we help?"></textarea>
                 <div class="form-error">Please enter a message</div>
               </div>
               <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
@@ -151,7 +221,7 @@
               <i class="ph ph-map-pin"></i>
               <div>
                 <h4>Headquarters</h4>
-                <p>123 Treasure Island Way<br>Nautical Bay, FL 33000</p>
+                <p>123 Treasure Island Way</p>
               </div>
             </div>
             <div class="contact-info-item">
@@ -172,16 +242,18 @@
             <div style="margin-top: 32px; padding-top: 32px; border-top: 1px solid var(--border);">
               <h4 style="font-family: var(--font-display); margin-bottom: 16px;">Follow the Adventure</h4>
               <div class="social-links" style="margin-top: 0;">
-                <a href="#" style="color: var(--primary);"><i class="ph ph-instagram-logo"></i></a>
-                <a href="#" style="color: var(--primary);"><i class="ph ph-facebook-logo"></i></a>
-                <a href="#" style="color: var(--primary);"><i class="ph ph-tiktok-logo"></i></a>
-                <a href="#" style="color: var(--primary);"><i class="ph ph-youtube-logo"></i></a>
+                <a href="#"><i class="ph ph-instagram-logo"></i></a>
+                <a href="#"><i class="ph ph-facebook-logo"></i></a>
+                <a href="#"><i class="ph ph-tiktok-logo"></i></a>
+                <a href="#"><i class="ph ph-youtube-logo"></i></a>
               </div>
             </div>
 
             <!-- Map -->
             <div class="map-container">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113401.78201200055!2d-80.1264389650428!3d26.13888358482431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d900ad4fdd1e0b%3A0x808ea019a32cba9a!2sFort%20Lauderdale%2C%20FL!5e0!3m2!1sen!2sus!4v1684534728564!5m2!1sen!2sus" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113401.78201200055!2d-80.1264389650428!3d26.13888358482431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d900ad4fdd1e0b%3A0x808ea019a32cba9a!2sFort%20Lauderdale%2C%20FL!5e0!3m2!1sen!2sus!4v1684534728564!5m2!1sen!2sus"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
 
@@ -194,8 +266,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col" style="grid-column: span 2;">
-          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor" style="color: var(--accent);"></i></div>
-          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to high seas treasure hunts.</p>
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor"
+              style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to
+            high seas treasure hunts.</p>
           <div class="social-links">
             <a href="#"><i class="ph ph-instagram-logo"></i></a>
             <a href="#"><i class="ph ph-facebook-logo"></i></a>
@@ -239,6 +313,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
-
-

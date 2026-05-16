@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,30 +9,27 @@
   <link rel="stylesheet" href="assets/css/rtl.css">
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <style>
-    .single-header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1540152431786-fb7c6afc949a?auto=format&fit=crop&q=80&w=1200') no-repeat center/cover;
-      padding: 120px 0;
-      color: #fff;
-      text-align: center;
-    }
     .post-layout {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 48px;
+      max-width: 800px;
+      margin: 0 auto;
     }
+
     .post-content {
       font-size: 1.1rem;
       line-height: 1.8;
     }
+
     .post-content h2 {
       color: var(--primary);
       margin: 40px 0 20px;
     }
+
     .post-content img {
       border-radius: var(--radius);
       margin: 32px 0;
       width: 100%;
     }
+
     .post-content blockquote {
       border-left: 4px solid var(--accent);
       padding-left: 24px;
@@ -40,13 +38,14 @@
       font-size: 1.2rem;
       color: var(--secondary);
     }
+
     [dir="rtl"] .post-content blockquote {
       border-left: none;
       border-right: 4px solid var(--accent);
       padding-left: 0;
       padding-right: 24px;
     }
-    
+
     /* Sidebar */
     .sidebar-widget {
       background: var(--surface);
@@ -55,6 +54,7 @@
       margin-bottom: 32px;
       border: 1px solid var(--border);
     }
+
     .sidebar-widget h4 {
       font-family: var(--font-display);
       color: var(--primary);
@@ -63,34 +63,42 @@
       padding-bottom: 8px;
       display: inline-block;
     }
+
     .related-post {
       display: flex;
       gap: 16px;
       margin-bottom: 16px;
     }
+
     .related-post img {
       width: 80px;
       height: 80px;
       object-fit: cover;
       border-radius: 8px;
     }
+
     .related-post h5 {
       font-size: 1rem;
       margin-bottom: 4px;
       line-height: 1.3;
     }
+
     .related-post h5 a {
       transition: color 0.3s;
     }
+
     .related-post h5 a:hover {
       color: var(--primary);
     }
-    
+
     @media (max-width: 992px) {
-      .post-layout { grid-template-columns: 1fr; }
+      .post-layout {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Drawer Overlay & Menu -->
@@ -111,7 +119,8 @@
       <a href="booking.html">Book Now</a>
       <a href="contact.html">Contact</a>
     </nav>
-      <a href="login.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <a href="login.html" class="btn btn-primary"
+      style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
     <div class="drawer-actions">
       <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
       <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
@@ -144,74 +153,61 @@
   </header>
 
   <main style="padding-top: var(--nav-height);">
-    <section class="single-header">
-      <div class="container">
-        <span style="background: var(--primary); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-family: var(--font-ui); font-weight: 700; text-transform: uppercase;">Party Tips</span>
-        <h1 style="color: #fff; margin: 16px 0;">How to Prepare Your Pool for a Mermaid Visit</h1>
-        <p style="font-family: var(--font-ui); opacity: 0.9;">By Sarah Jenkins | May 12, 2026</p>
+    <!-- Page Header -->
+    <section style="background: var(--surface); padding: 80px 0;">
+      <div class="container text-center">
+        <span
+          style="background: var(--primary); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-family: var(--font-ui); font-weight: 700; text-transform: uppercase; margin-bottom: 16px; display: inline-block;">Party
+          Tips</span>
+        <h1 style="color: var(--primary);">How to Prepare Your Pool for a Mermaid Visit</h1>
+        <p class="section-subtitle" style="margin-bottom: 0; color: var(--secondary);">By Sarah Jenkins | May 12, 2026
+        </p>
       </div>
     </section>
 
     <section>
       <div class="container post-layout">
         <article class="post-content">
-          <p>Booking a mermaid for your child's pool party is a magical experience that will be remembered for years. However, to ensure the safety of our performers and the best possible experience for the children, a little bit of preparation goes a long way.</p>
-          
-          <h2>1. Water Temperature and Cleanliness</h2>
-          <p>Mermaids are tough, but they are still human! Ensure that your pool is heated if the weather is chilly. A comfortable temperature helps the mermaid stay in the water longer. More importantly, ensure the pool is chemically balanced and clean. Crystal clear water makes for the best underwater photos!</p>
+          <p>Booking a mermaid for your child's pool party is a magical experience that will be remembered for years.
+            However, to ensure the safety of our performers and the best possible experience for the children, a little
+            bit of preparation goes a long way.</p>
 
-          <img src="https://images.unsplash.com/photo-1506869640319-ce1a44a1bb0b?auto=format&fit=crop&q=80&w=800" alt="Pool Party">
+          <h2>1. Water Temperature and Cleanliness</h2>
+          <p>Mermaids are tough, but they are still human! Ensure that your pool is heated if the weather is chilly. A
+            comfortable temperature helps the mermaid stay in the water longer. More importantly, ensure the pool is
+            chemically balanced and clean. Crystal clear water makes for the best underwater photos!</p>
+
+          <img src="assets/images/blog-single-pool.jpg" alt="Clean sparkling pool ready for a mermaid party">
 
           <h2>2. Clear the Deck</h2>
-          <p>Mermaids have beautiful, but heavy, silicone tails. Getting into the pool requires a clear pathway. Make sure to remove any tripping hazards like pool toys, hoses, or chairs from the area where the mermaid will be entering the water.</p>
+          <p>Mermaids have beautiful, but heavy, silicone tails. Getting into the pool requires a clear pathway. Make
+            sure to remove any tripping hazards like pool toys, hoses, or chairs from the area where the mermaid will be
+            entering the water.</p>
 
-          <blockquote>"A well-prepared pool ensures that the magic starts the second our mermaids arrive, with no delays!" - Marina the Mermaid</blockquote>
+          <blockquote>"A well-prepared pool ensures that the magic starts the second our mermaids arrive, with no
+            delays!" - Marina the Mermaid</blockquote>
 
           <h2>3. Have a Changing Area Ready</h2>
-          <p>The transformation from human to mermaid requires privacy. Please have a ground-floor bathroom or a dedicated, private room near the pool area ready for the performer. They will need this space before and after their appearance.</p>
+          <p>The transformation from human to mermaid requires privacy. Please have a ground-floor bathroom or a
+            dedicated, private room near the pool area ready for the performer. They will need this space before and
+            after their appearance.</p>
 
           <h2>4. Adult Supervision is Mandatory</h2>
-          <p>While our mermaids lead games and keep the children entertained, they are not lifeguards. For safety reasons, we require at least one designated adult "water watcher" to be present at all times while the children are in the pool.</p>
+          <p>While our mermaids lead games and keep the children entertained, they are not lifeguards. For safety
+            reasons, we require at least one designated adult "water watcher" to be present at all times while the
+            children are in the pool.</p>
 
-          <p>By following these simple steps, you set the stage for an enchanting and stress-free event. Ready to make a splash? <a href="booking.html" style="color: var(--secondary); font-weight: 700;">Book a mermaid today!</a></p>
+          <p>By following these simple steps, you set the stage for an enchanting and stress-free event. Ready to make a
+            splash? <a href="booking.html" style="color: var(--secondary); font-weight: 700;">Book a mermaid today!</a>
+          </p>
+
+          <div style="text-align: center; margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border);">
+            <a href="blog.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 8px;">
+              <i class="ph ph-arrow-left"></i> Back to Blog
+            </a>
+          </div>
+
         </article>
-
-        <aside class="sidebar">
-          <div class="sidebar-widget">
-            <h4>About the Author</h4>
-            <div style="display: flex; align-items: center; gap: 16px; margin-top: 16px;">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" alt="Sarah">
-              <div>
-                <h5 style="font-family: var(--font-display); font-size: 1.1rem;">Sarah Jenkins</h5>
-                <p style="font-size: 0.9rem; opacity: 0.8;">Event Coordinator</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="sidebar-widget">
-            <h4>Related Posts</h4>
-            <div class="related-post">
-              <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=200" alt="Post">
-              <div>
-                <h5><a href="#">Captain Redbeard's Grand Treasure Hunt</a></h5>
-                <span style="font-size: 0.8rem; opacity: 0.7;">May 05, 2026</span>
-              </div>
-            </div>
-            <div class="related-post">
-              <img src="https://images.unsplash.com/photo-1594957545938-f10d21e89bd4?auto=format&fit=crop&q=80&w=200" alt="Post">
-              <div>
-                <h5><a href="#">Meet Marina: Life Under the Sea</a></h5>
-                <span style="font-size: 0.8rem; opacity: 0.7;">April 28, 2026</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="sidebar-widget" style="text-align: center; background: var(--primary); color: #fff; border: none;">
-            <h4 style="color: #fff; border-color: rgba(255,255,255,0.3);">Ready to Sail?</h4>
-            <p style="margin-bottom: 16px;">Book your adventure today.</p>
-            <a href="booking.html" class="btn btn-secondary" style="background: #fff; color: var(--primary); border: none;">Book Now</a>
-          </div>
-        </aside>
       </div>
     </section>
   </main>
@@ -220,8 +216,10 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col" style="grid-column: span 2;">
-          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor" style="color: var(--accent);"></i></div>
-          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to high seas treasure hunts.</p>
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor"
+              style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to
+            high seas treasure hunts.</p>
           <div class="social-links">
             <a href="#"><i class="ph ph-instagram-logo"></i></a>
             <a href="#"><i class="ph ph-facebook-logo"></i></a>
@@ -265,6 +263,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
-
-

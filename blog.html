@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,7 @@
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 32px;
     }
+
     .blog-card {
       background: var(--surface);
       border-radius: var(--radius);
@@ -21,17 +23,21 @@
       transition: transform 0.3s;
       border: 1px solid var(--border);
     }
+
     .blog-card:hover {
       transform: translateY(-5px);
     }
+
     .blog-img {
       height: 220px;
       width: 100%;
       object-fit: cover;
     }
+
     .blog-content {
       padding: 24px;
     }
+
     .blog-tag {
       display: inline-block;
       background: var(--primary);
@@ -44,6 +50,7 @@
       margin-bottom: 12px;
       text-transform: uppercase;
     }
+
     .blog-card h3 {
       font-family: var(--font-display);
       font-size: 1.4rem;
@@ -51,7 +58,11 @@
       color: var(--primary);
       line-height: 1.3;
     }
-    [data-theme="dark"] .blog-card h3 { color: var(--accent); }
+
+    [data-theme="dark"] .blog-card h3 {
+      color: var(--accent);
+    }
+
     .blog-meta {
       display: flex;
       align-items: center;
@@ -62,6 +73,7 @@
       font-size: 0.9rem;
       opacity: 0.8;
     }
+
     .author-avatar {
       width: 40px;
       height: 40px;
@@ -70,6 +82,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <!-- Drawer Overlay & Menu -->
@@ -90,7 +103,8 @@
       <a href="booking.html">Book Now</a>
       <a href="contact.html">Contact</a>
     </nav>
-      <a href="login.html" class="btn btn-primary" style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
+    <a href="login.html" class="btn btn-primary"
+      style="padding: 14px 32px; font-size: 1rem; margin-top: 24px; display: flex; width: 100%;">Login</a>
     <div class="drawer-actions">
       <button class="action-btn theme-toggle"><i class="ph ph-moon"></i></button>
       <button class="action-btn rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
@@ -123,11 +137,11 @@
   </header>
 
   <main style="padding-top: var(--nav-height);">
-    <!-- Header -->
+    <!-- Page Header -->
     <section style="background: var(--surface); padding: 80px 0;">
       <div class="container text-center">
-        <h1 style="color: var(--primary);">Captain's Log</h1>
-        <p class="section-subtitle">Party Tips, Character Stories, and Event Recaps</p>
+        <h1 style="color: var(--primary);">Pirate's Blog</h1>
+        <p class="section-subtitle">Latest news, tips, and tales from the high seas</p>
       </div>
     </section>
 
@@ -135,65 +149,220 @@
     <section>
       <div class="container">
         <div class="blog-grid">
-          
+
           <!-- Post 1 -->
           <article class="blog-card">
             <a href="blog-single.html">
-              <img src="https://images.unsplash.com/photo-1540152431786-fb7c6afc949a?auto=format&fit=crop&q=80&w=600" class="blog-img" alt="Blog Post">
+              <img src="assets/images/blog-pool-prep.jpg" class="blog-img"
+                alt="How to Prepare Your Pool for a Mermaid Visit">
             </a>
             <div class="blog-content">
               <span class="blog-tag">Party Tips</span>
-              <a href="blog-single.html"><h3>How to Prepare Your Pool for a Mermaid Visit</h3></a>
-              <p style="font-size: 0.95rem;">Ensure your pool is safe, clean, and ready for the magic. We share our top 5 tips for preparing your backyard oasis.</p>
+              <a href="blog-single.html">
+                <h3>How to Prepare Your Pool for a Mermaid Visit</h3>
+              </a>
+              <p style="font-size: 0.95rem;">Ensure your pool is safe, clean, and ready for the magic. We share our top
+                5 tips for preparing your backyard oasis.</p>
               <div class="blog-meta">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=100" class="author-avatar" alt="Author">
                 <div>
                   <div style="font-family: var(--font-ui); font-weight: 700;">Sarah Jenkins</div>
                   <div style="font-size: 0.8rem;">May 12, 2026</div>
                 </div>
               </div>
+              <a href="blog-single.html" class="btn btn-secondary blog-read-more">Read More</a>
             </div>
           </article>
 
           <!-- Post 2 -->
           <article class="blog-card">
             <a href="blog-single.html">
-              <img src="https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=600" class="blog-img" alt="Blog Post">
+              <img src="assets/images/blog-treasure-hunt.jpg" class="blog-img"
+                alt="Captain Redbeard's Grand Treasure Hunt">
             </a>
             <div class="blog-content">
-              <span class="blog-tag" style="background: var(--secondary);">Event Recaps</span>
-              <a href="blog-single.html"><h3>Captain Redbeard's Grand Treasure Hunt</h3></a>
-              <p style="font-size: 0.95rem;">A look back at last weekend's epic land party where 20 little pirates successfully located the hidden doubloons.</p>
+              <span class="blog-tag">Event Recaps</span>
+              <a href="blog-single.html">
+                <h3>Captain Redbeard's Grand Treasure Hunt</h3>
+              </a>
+              <p style="font-size: 0.95rem;">A look back at last weekend's epic land party where 20 little pirates
+                successfully located the hidden doubloons.</p>
               <div class="blog-meta">
-                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=100" class="author-avatar" alt="Author">
                 <div>
                   <div style="font-family: var(--font-ui); font-weight: 700;">Mike O'Connor</div>
                   <div style="font-size: 0.8rem;">May 05, 2026</div>
                 </div>
               </div>
+              <a href="blog-single.html" class="btn btn-secondary blog-read-more">Read More</a>
             </div>
           </article>
 
           <!-- Post 3 -->
           <article class="blog-card">
             <a href="blog-single.html">
-              <img src="https://images.unsplash.com/photo-1594957545938-f10d21e89bd4?auto=format&fit=crop&q=80&w=600" class="blog-img" alt="Blog Post">
+              <img src="assets/images/blog-marina-story.jpg" class="blog-img" alt="Meet Marina: Life Under the Sea">
             </a>
             <div class="blog-content">
-              <span class="blog-tag" style="background: var(--accent); color: #000;">Character Stories</span>
-              <a href="blog-single.html"><h3>Meet Marina: Life Under the Sea</h3></a>
-              <p style="font-size: 0.95rem;">An exclusive interview with our lead mermaid, Marina, about her favorite songs and why she loves swimming.</p>
+              <span class="blog-tag">Character Stories</span>
+              <a href="blog-single.html">
+                <h3>Meet Marina: Life Under the Sea</h3>
+              </a>
+              <p style="font-size: 0.95rem;">An exclusive interview with our lead mermaid, Marina, about her favorite
+                songs and why she loves swimming with children.</p>
               <div class="blog-meta">
-                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" class="author-avatar" alt="Author">
                 <div>
                   <div style="font-family: var(--font-ui); font-weight: 700;">Emily Rose</div>
                   <div style="font-size: 0.8rem;">April 28, 2026</div>
                 </div>
               </div>
+              <a href="blog-single.html" class="btn btn-secondary blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <!-- Post 4 -->
+          <article class="blog-card">
+            <a href="blog-single.html">
+              <img src="assets/images/blog-costume-care.jpg" class="blog-img"
+                alt="Behind the Scales: How We Make Our Costumes">
+            </a>
+            <div class="blog-content">
+              <span class="blog-tag">Behind the Scenes</span>
+              <a href="blog-single.html">
+                <h3>Behind the Scales: How We Make Our Costumes</h3>
+              </a>
+              <p style="font-size: 0.95rem;">From hand-stitched sequins to waterproof silicone tails — a peek inside our
+                costume studio where the magic begins.</p>
+              <div class="blog-meta">
+                <div>
+                  <div style="font-family: var(--font-ui); font-weight: 700;">Sarah Jenkins</div>
+                  <div style="font-size: 0.8rem;">April 20, 2026</div>
+                </div>
+              </div>
+              <a href="blog-single.html" class="btn btn-secondary blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <!-- Post 5 -->
+          <article class="blog-card">
+            <a href="blog-single.html">
+              <img src="assets/images/blog-party-checklist.jpg" class="blog-img"
+                alt="The Ultimate Pirate Party Checklist">
+            </a>
+            <div class="blog-content">
+              <span class="blog-tag">Party Tips</span>
+              <a href="blog-single.html">
+                <h3>The Ultimate Pirate Party Checklist</h3>
+              </a>
+              <p style="font-size: 0.95rem;">From treasure maps to themed snacks — everything you need to plan the
+                swashbuckling celebration of the year.</p>
+              <div class="blog-meta">
+                <div>
+                  <div style="font-family: var(--font-ui); font-weight: 700;">Mike O'Connor</div>
+                  <div style="font-size: 0.8rem;">April 14, 2026</div>
+                </div>
+              </div>
+              <a href="blog-single.html" class="btn btn-secondary blog-read-more">Read More</a>
+            </div>
+          </article>
+
+          <!-- Post 6 -->
+          <article class="blog-card">
+            <a href="blog-single.html">
+              <img src="assets/images/blog-memories.jpg" class="blog-img"
+                alt="5 Ways to Capture Party Memories That Last Forever">
+            </a>
+            <div class="blog-content">
+              <span class="blog-tag">Inspiration</span>
+              <a href="blog-single.html">
+                <h3>5 Ways to Capture Party Memories That Last Forever</h3>
+              </a>
+              <p style="font-size: 0.95rem;">Photography tips, keepsake ideas, and creative ways to bottle up the magic
+                of your child's most special day.</p>
+              <div class="blog-meta">
+                <div>
+                  <div style="font-family: var(--font-ui); font-weight: 700;">Emily Rose</div>
+                  <div style="font-size: 0.8rem;">April 07, 2026</div>
+                </div>
+              </div>
+              <a href="blog-single.html" class="btn btn-secondary blog-read-more">Read More</a>
             </div>
           </article>
 
         </div>
+
+        <style>
+          .blog-card {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .blog-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            align-items: center;
+          }
+
+          .blog-content p {
+            flex-grow: 1;
+          }
+
+          .blog-content h3 {
+            text-align: center;
+          }
+
+          .blog-meta {
+            justify-content: center;
+          }
+
+          /* Unified tag color — all primary */
+          .blog-tag {
+            background: var(--primary) !important;
+            color: #fff !important;
+          }
+
+          .blog-read-more {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            padding: 10px 24px;
+          }
+
+          /* Newsletter Section */
+          .newsletter-section {
+            background: #ffffff;
+            color: var(--text);
+            padding: 80px 0;
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+          }
+
+          [data-theme="dark"] .newsletter-section {
+            background: #000000;
+            border-top-color: rgba(255, 255, 255, 0.1);
+          }
+
+          .newsletter-section h2 {
+            color: var(--primary);
+          }
+
+          [data-theme="dark"] .newsletter-section h2 {
+            color: var(--accent);
+          }
+
+          .newsletter-input {
+            padding: 14px 24px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            flex-grow: 1;
+            min-width: 250px;
+            font-family: var(--font-ui);
+            background: var(--bg);
+            color: var(--text);
+          }
+        </style>
 
         <!-- Pagination -->
         <div style="display: flex; justify-content: center; gap: 8px; margin-top: 48px;">
@@ -203,14 +372,28 @@
         </div>
       </div>
     </section>
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+      <div class="container text-center" style="max-width: 600px;">
+        <h2 style="margin-bottom: 16px; font-family: var(--font-display);">Join the Crew</h2>
+        <p style="margin-bottom: 32px; opacity: 0.9;">Subscribe to our newsletter for party tips, special offers, and tales from the high seas.</p>
+        <form style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+          <input type="email" placeholder="Your email address" class="newsletter-input" required>
+          <button type="submit" class="btn btn-primary" style="padding: 14px 32px;">Subscribe</button>
+        </form>
+        <p style="font-size: 0.8rem; margin-top: 16px; opacity: 0.7;">We promise never to share your email with landlubbers.</p>
+      </div>
+    </section>
   </main>
 
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col" style="grid-column: span 2;">
-          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor" style="color: var(--accent);"></i></div>
-          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to high seas treasure hunts.</p>
+          <div class="logo" style="color: #fff; margin-bottom: 16px;">Piratica <i class="ph ph-anchor"
+              style="color: var(--accent);"></i></div>
+          <p>Whimsical nautical adventure delivering unforgettable children's entertainment. From enchanted lagoons to
+            high seas treasure hunts.</p>
           <div class="social-links">
             <a href="#"><i class="ph ph-instagram-logo"></i></a>
             <a href="#"><i class="ph ph-facebook-logo"></i></a>
@@ -254,6 +437,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
-
-
