@@ -142,4 +142,26 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // --- Back to Top ---
+  const backToTop = document.createElement('button');
+  backToTop.className = 'back-to-top';
+  backToTop.id = 'backToTop';
+  backToTop.innerHTML = '<i class="ph ph-caret-up"></i>';
+  document.body.appendChild(backToTop);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add('active');
+    } else {
+      backToTop.classList.remove('active');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
 });
