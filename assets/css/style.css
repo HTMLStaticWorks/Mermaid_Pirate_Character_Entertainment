@@ -9,7 +9,7 @@
   --surface: #f0f7fc;
   --border: rgba(30, 111, 168, 0.12);
   --primary: #1e6fa8;
-  --secondary: #c8531a;
+  --secondary: #14517e;
   --accent: #f5d060;
 
   --radius: 12px;
@@ -229,7 +229,7 @@ img {
   font-family: var(--font-head);
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--accent) !important;
+  color: var(--primary) !important;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -508,8 +508,7 @@ section {
    Footer
    ========================================================================== */
 footer {
-  background-color: #1e6fa8;
-  /* Always Sapphire Lagoon */
+  background-color: #000000;
   color: #fff;
   padding: 80px 0 24px;
 }
@@ -525,7 +524,12 @@ footer {
   font-family: var(--font-display);
   font-size: 1.2rem;
   margin-bottom: 24px;
-  color: var(--accent);
+  color: var(--primary);
+}
+
+.footer-col .logo {
+  margin-top: -12px;
+  line-height: 1;
 }
 
 .footer-col p {
@@ -927,7 +931,7 @@ footer {
 .gallery2-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(30, 111, 168, 0.75) 0%, rgba(200, 83, 26, 0.75) 100%);
+  background: linear-gradient(135deg, rgba(30, 111, 168, 0.75) 0%, rgba(20, 81, 126, 0.75) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -986,7 +990,7 @@ footer {
   background:
     radial-gradient(ellipse at 20% 50%, rgba(30, 111, 168, 0.07) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 20%, rgba(245, 208, 96, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(200, 83, 26, 0.06) 0%, transparent 50%);
+    radial-gradient(ellipse at 60% 80%, rgba(30, 111, 168, 0.06) 0%, transparent 50%);
   animation: oceanShimmer 6s ease-in-out infinite alternate;
 }
 
@@ -1076,7 +1080,7 @@ footer {
   background:
     radial-gradient(ellipse at 20% 50%, rgba(245, 208, 96, 0.06) 0%, transparent 60%),
     radial-gradient(ellipse at 80% 20%, rgba(30, 111, 168, 0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(200, 83, 26, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse at 60% 80%, rgba(30, 111, 168, 0.08) 0%, transparent 50%);
 }
 
 [data-theme="dark"] .stats-section .section-title {

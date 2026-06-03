@@ -43,15 +43,20 @@
       height: 50px;
       border-radius: 50%;
       background: var(--bg);
-      border: 2px solid var(--border);
+      border: 2px solid rgba(13, 42, 62, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
-      color: var(--border);
+      color: rgba(13, 42, 62, 0.6);
       position: relative;
       z-index: 2;
       transition: all 0.3s;
+    }
+
+    [data-theme="dark"] .step-indicator {
+      border-color: rgba(255, 255, 255, 0.25);
+      color: rgba(255, 255, 255, 0.6);
     }
 
     .step-indicator.active {

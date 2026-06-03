@@ -10,9 +10,6 @@
   /* Flex direction handles order inherently, but just in case */
 }
 
-[dir="rtl"] .logo {
-  flex-direction: row-reverse;
-}
 
 [dir="rtl"] .btn-primary::after {
   left: auto;
